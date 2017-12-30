@@ -1,78 +1,4 @@
-#include <iostream>
-#include <set>
-#include <vector>
-#define MOD 1000000000
-using namespace std;
-
-typedef long long ll;
-ll f[45];
-int n,m,niz[100005];//n: number of elements, m: number of operations
-
-set<int> s;// when we insert, it will be BT sorted way storing everything
-           // no duplicates
-int main()
-{
-    ios_base::sync_with_stdio(0);
-    f[1]=1;
-    for(int i=2;i<40;i++) // calculating fact of first 39 integers
-    {
-        f[i]=(f[i-1]*i);
-        f[i]%=MOD;
-    }
-    cin>>n>>m; //n: number of elements, m: number of operations
-    for(int i=1;i<=n;i++)
-    {
-        cin>>niz[i];
-        if(niz[i]<40)
-            s.insert(i);
-    }
-    while(m--)
-    {
-        int o; // operations:1 or 2 or 3
-        cin>>o;
-        if(o==1)
-        {
-            int l,r;//all indices between l and r
-            cin>>l>>r;
-            vector<int> v;
-            for(set <int>::iterator it=s.lower_bound(l);it!=s.lower_bound(r+1);++it)
-            {
-                niz[*it]++;
-                if(niz[*it]>39)
-                   v.push_back(*it);
-            }
-            for(int i=0;i<v.size();i++)
-                s.erase(v[i]);
-        }
-
-        if(o==2)
-        {   //compute the sum of  for all A[i] from l to r, inclusive.
-            //Print this value modulo 10^9 .
-            int l,r;
-            ll ans=0;
-            cin>>l>>r;
-            for(set <int>::iterator it=s.lower_bound(l);it!=s.lower_bound(r+1);++it)
-            {
-                ans+=(f[niz[*it]]);
-                if(ans>=MOD)
-                    ans%=MOD;
-            }
-            cout<<ans<<"\n";
-        }
-        if(o==3)
-        {
-            int i,v; // set the value at index i to V.
-            cin>>i>>v;
-            s.insert(i);
-            niz[i]=v;
-        }
-    }
-    return 0;
-}
-
-
-// correct but not passed all cases
-/*#include <functional>
+#include <functional>
 #include <vector>
 #include <iostream>
 #include <algorithm>
@@ -176,4 +102,4 @@ int main()
         }
     }
     return 0;
-}*/
+}
