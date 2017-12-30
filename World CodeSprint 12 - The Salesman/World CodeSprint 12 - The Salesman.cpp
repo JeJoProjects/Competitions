@@ -1,4 +1,3 @@
-// my code works perfectly!
 #include <iostream>
 #include <vector>
 #include <stdlib.h>
@@ -30,4 +29,3 @@ int main() {
     return 0;
 }
 
-// hackerrank - no need
