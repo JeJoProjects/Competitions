@@ -5,9 +5,9 @@
 using namespace std;
 #define ull unsigned long long int
 #define lli long long int
-#define uli unsigned int
+#define uli unsigned long int
 
-lli Maximum_Sum_Subarray(vector<lli> arr)	// Overall Time Complexity O(n)
+/*lli Maximum_Sum_Subarray(vector<lli> arr)	// Overall Time Complexity O(n)
 {
    lli ans=0, sum=0;
    bool testing_negtive=true;
@@ -30,6 +30,22 @@ lli Maximum_Sum_Subarray(vector<lli> arr)	// Overall Time Complexity O(n)
       return *max_element(arr.begin(), arr.end());
 	else
 		return ans;
+}
+*/
+// or
+// The implementation handles the case when all numbers in array are negative.
+lli maxSubArraySum(vector<lli> arr)//, ull size) // Time Complexity O(n)
+{
+   lli max_so_far = arr[0];
+   lli curr_max = arr[0];
+
+   vector<lli>::iterator itr;
+   for(itr= arr.begin()+1; itr!=arr.end(); ++itr)
+   {
+        curr_max = max(*itr, curr_max+(*itr));
+        max_so_far = max(max_so_far, curr_max);
+   }
+   return max_so_far;
 }
 
 int main()
@@ -56,13 +72,13 @@ int main()
             for(; itr!=A.end(); ++itr)
                {
                   cin>>*itr;
-                  //B.push_back(*itr);
                   for(ull i=idx; i< (N*K) ; i=i+N)
                      B[i]=*itr;
 
                   ++idx;
                }
-            cout<< Maximum_Sum_Subarray(B)<<"\n";
+            //cout<< Maximum_Sum_Subarray(B)<<"\n";
+            cout<< maxSubArraySum(B)<<endl;//, B.size()) <<endl;
          }
       }
    }
