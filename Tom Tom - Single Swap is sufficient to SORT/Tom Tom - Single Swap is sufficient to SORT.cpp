@@ -46,22 +46,3 @@ int main()
 
   return 0;
 }
-
-
-//java
-/**
-	public boolean check(final int[] A)
-	{
-		int count = 0;
-		int[] B = Arrays.copyOf(A, A.length);
-		Arrays.sort(B);
-		for (int i = 0; i < A.length; i++)
-        {
-			if (A[i] != B[i])
-				count++;
-		}
-		if (count > 2)
-			return false;
-		return true;
-	}
-	*/
