@@ -7,33 +7,6 @@ using namespace std;
 #define lli long long int
 #define uli unsigned long int
 
-/*lli Maximum_Sum_Subarray(vector<lli> arr)	// Overall Time Complexity O(n)
-{
-   lli ans=0, sum=0;
-   bool testing_negtive=true;
-   vector<lli>::iterator itr;
-
-   for(itr= arr.begin(); itr!=arr.end(); ++itr)
-   {
-      if(sum + *itr > 0)
-         sum+=(*itr);
-      else
-         sum  = 0;
-
-      if(*itr>0)
-         testing_negtive=false; // if Max < 0 return Max
-
-      ans = max(ans,sum);
-   }
-
-   if(testing_negtive)
-      return *max_element(arr.begin(), arr.end());
-	else
-		return ans;
-}
-*/
-// or
-// The implementation handles the case when all numbers in array are negative.
 lli maxSubArraySum(vector<lli> arr)//, ull size) // Time Complexity O(n)
 {
    lli max_so_far = arr[0];
