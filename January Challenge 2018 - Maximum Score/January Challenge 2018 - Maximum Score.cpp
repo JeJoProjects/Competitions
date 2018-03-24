@@ -105,26 +105,4 @@ int main()
    return 0;
 }
 
-// vector approach failed due to time limit
-/*vector<ull> vec(N*N);
-vector<ull>::iterator itr=vec.begin();
-for( ;itr!=vec.end(); ++itr)
-   cin>>*itr;
 
-ull Max_Ni=0, Sum=0, Max_pre=0;
-bool possible=true;
-for(unsigned int i=0; i<vec.size(); i=i+N)
-{
-   Max_Ni=*max_element(vec.begin()+i, vec.begin()+i+N);
-   if(Max_Ni>Max_pre)
-   {
-      Sum+=Max_Ni;
-      Max_pre=Max_Ni;
-   }
-   else
-   {
-      possible=false;
-      break;
-   }
-}
-(possible) ? cout<<Sum<<endl: cout<<-1<<endl; */
