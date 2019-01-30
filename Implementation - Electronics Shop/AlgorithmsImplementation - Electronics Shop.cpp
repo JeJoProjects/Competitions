@@ -1,8 +1,8 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
-using namespace std;
 
-int getMoneySpent(vector<int> keyboard, vector<int> USB, int s)
+
+int getMoneySpent(std::vector<int> keyboard, std::vector<int> USB, int s)
 {
     int MAX=0;
     for(unsigned int r=0; r<keyboard.size(); ++r)
@@ -20,14 +20,14 @@ int main()
 // s(the amount of money Monica has),
 // n(the number of keyboard brands) and  m(the number of USB drive brands).
    int s=0,n=0,m=0;
-   cin>>s >>n >>m;
-   vector<int> keyboard(n), USB(m); //vector declaration
+   std::cin>>s >>n >>m;
+   std::vector<int> keyboard(n), USB(m); //std::vector declaration
       for(int r=0; r<n; ++r)
-         cin>>keyboard[r];
+         std::cin>>keyboard[r];
       for(int c=0; c<m; ++c)
-         cin>>USB[c];
+         std::cin>>USB[c];
       int moneySpent = getMoneySpent(keyboard, USB, s);
-      cout << moneySpent << endl;
+      std::cout << moneySpent << std::endl;
 
    return 0;
 }

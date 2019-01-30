@@ -1,13 +1,13 @@
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 #include <iostream>
 
-std::string canModify(std::vector<int>& a)
+std::std::string canModify(std::std::vector<int>& a)
 {
     if( (std::is_sorted(a.begin(), a.end())) || (a.size() == 1) )
         return "YES";
 
-    std::vector<int> b = a;
+    std::std::vector<int> b = a;
     for(size_t i=1; i < a.size(); ++i)
     {
         if( a[i-1] > a[i])
@@ -23,15 +23,15 @@ std::string canModify(std::vector<int>& a)
 
 int main()
 {
-    int t; std::cin>>t;
+    int t; std::std::cin>>t;
     while(t--)
     {
-        int n; std::cin >> n;
-        std::vector<int> vec(n);
+        int n; std::std::cin >> n;
+        std::std::vector<int> vec(n);
 
-        for(auto &it:vec) std::cin >> it;
+        for(auto &it:vec) std::std::cin >> it;
 
-        std::cout << canModify(vec) << std::endl;
+        std::std::cout << canModify(vec) << std::std::endl;
     }
    return 0;
 }

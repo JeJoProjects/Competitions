@@ -1,14 +1,14 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 
 int main()
 {
-    int n; std::cin >> n; //the number of houses
-    int k; std::cin >> k; //the range of each transmitter
+    int n; std::std::cin >> n; //the number of houses
+    int k; std::std::cin >> k; //the range of each transmitter
 
-    std::vector<int> vec(n);
-    for(auto &it: vec) std::cin >> it;
+    std::std::vector<int> vec(n);
+    for(auto &it: vec) std::std::cin >> it;
 
     std::sort(vec.begin(), vec.end());
 
@@ -33,7 +33,7 @@ int main()
         location = vec[i] + k;
         while(i < n && vec[i] <= location)  i++;
     }
-    std::cout << numTransmitters << std::endl;
+    std::std::cout << numTransmitters << std::std::endl;
 
     return 0;
 }

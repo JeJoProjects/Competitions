@@ -1,10 +1,10 @@
 #include <cmath>
 #include <cstdio>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-#include <string>
-using namespace std;
+#include <std::string>
+
 class AdvancedArithmetic
 {
     public:
@@ -20,7 +20,7 @@ public:
          if(n%i==0)
          {
             SUM+=i;
-            //cout<<SUM<<endl;
+            //std::cout<<SUM<<std::endl;
          }
       return SUM;
    }
@@ -29,9 +29,9 @@ public:
 int main()
 {
     int n;
-    cin >> n;
+    std::cin >> n;
     AdvancedArithmetic *myCalculator = new Calculator();
     int sum = myCalculator->divisorSum(n);
-    cout << "I implemented: AdvancedArithmetic\n" << sum;
+    std::cout << "I implemented: AdvancedArithmetic\n" << sum;
     return 0;
 }

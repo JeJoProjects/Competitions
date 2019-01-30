@@ -3,7 +3,7 @@
 int main()
 {
     int price, doller, minDoller, total;
-    std::cin >> price >> doller >> minDoller >> total;
+    std::std::cin >> price >> doller >> minDoller >> total;
 
     int maxGame = 0;
     int dollerSum = 0;
@@ -14,6 +14,6 @@ int main()
         (price-doller >= minDoller) ?
             price -= doller: price = minDoller;
     }
-    std::cout << maxGame-1 << std::endl;
+    std::std::cout << maxGame-1 << std::std::endl;
     return 0;
 }

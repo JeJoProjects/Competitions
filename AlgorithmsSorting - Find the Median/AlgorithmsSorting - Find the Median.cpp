@@ -1,9 +1,9 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 #include <cmath>
 
-int partition(std::vector<int>& arr, int left, int right, int pivotIndex) {
+int partition(std::std::vector<int>& arr, int left, int right, int pivotIndex) {
     auto pivotValue = arr[pivotIndex];
     std::swap (arr[pivotIndex], arr[right]);  // Move pivot to end
     auto storeIndex = left;
@@ -17,7 +17,7 @@ int partition(std::vector<int>& arr, int left, int right, int pivotIndex) {
 }
 
 
-int quickSelect(std::vector<int>& arr, int left, int right, int k) {
+int quickSelect(std::std::vector<int>& arr, int left, int right, int k) {
     if(left == right)        // If the list contains only one element,
         return arr[left];  // return that element
     auto pivotIndex  = left + std::floor(rand() % (right - left + 1));    // select a pivotIndex between left and right,
@@ -35,21 +35,21 @@ int quickSelect(std::vector<int>& arr, int left, int right, int k) {
 int main() {
 
     auto n = 0;
-    std::cin >> n;
-    std::vector<int> arr(n, 0);
+    std::std::cin >> n;
+    std::std::vector<int> arr(n, 0);
     for(int i = 0; i < n; ++ i)
-        std::cin >> arr[i];
-    std::cout << quickSelect(arr, 0, n - 1, n / 2) << std::endl;
+        std::std::cin >> arr[i];
+    std::std::cout << quickSelect(arr, 0, n - 1, n / 2) << std::std::endl;
 
     return 0;
 }
 // or but above one is good!
 /*#include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
-using namespace std;
 
-int MEADIAN(vector<int> &vec)
+
+int MEADIAN(std::vector<int> &vec)
 {
    int mid=vec.size()/2;
    sort(vec.begin(), vec.end());
@@ -59,18 +59,18 @@ int MEADIAN(vector<int> &vec)
 int main()
 {
    unsigned int N=0;
-   cin>>N; //the size of the array
+   std::cin>>N; //the size of the array
    if(N>=1 && (N%2!=0 && N<=1000001))
    {
       int temp=0;
-      vector<int> x;
+      std::vector<int> x;
       for(unsigned int i=0; i<N; ++i)
       {
-         cin>>temp;
+         std::cin>>temp;
          if (temp>=-10000 && temp<=10000)
             x.push_back(temp);
       }
-      cout<<MEADIAN(x)<<endl;
+      std::cout<<MEADIAN(x)<<std::endl;
    }
     return 0;
 }

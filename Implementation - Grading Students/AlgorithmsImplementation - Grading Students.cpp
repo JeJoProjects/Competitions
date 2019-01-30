@@ -1,18 +1,18 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-using namespace std;
+
 
 int main()
 {
     unsigned int n=0;
-    cin>>n;
+    std::cin>>n;
     if(n>=1 && n<=60)
     {
         unsigned int grade[n], rgrade[n], temp=0;
         for(unsigned int i=0; i<n; ++i)
         {
-            cin>>temp;
+            std::cin>>temp;
             if(temp>=0 && temp<=100)
             {
                /* read the following
@@ -38,26 +38,26 @@ int main()
             }
         }
         for(unsigned int i=0; i<n; ++i)
-            cout<<rgrade[i]<<endl;
+            std::cout<<rgrade[i]<<std::endl;
     }
     return 0;
 }
 
 //********************** or ***************************
 /*#include <bits/stdc++.h>
-using namespace std;
+
 
 void solution() {
      int n, x;
-     cin>>n;
+     std::cin>>n;
      for(int i=0; i<n; i++){
-        cin>>x;
+        std::cin>>x;
         if(x>=38 and x%5>=3){
             while(x%5!=0){
                x++;
             }
         }
-        cout<<x<<endl;
+        std::cout<<x<<std::endl;
      }
 }
 

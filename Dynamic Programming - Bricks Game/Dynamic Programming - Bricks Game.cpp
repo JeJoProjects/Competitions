@@ -1,22 +1,22 @@
 #include <iostream>
 #include <algorithm>
-using namespace std;
+
 
 int main()
 {
 	int T;
-	cin>>T;
+	std::cin>>T;
 	while(T > 0)
       {
 		int N;
-		cin>>N;
+		std::cin>>N;
 		long long *bricks = new long long[N];
 		long long *sum = new long long[N]; // sum[i] = sum of bricks up to i
 		for(int i = 0; i < N; i++)
-			cin>>bricks[N-i-1];
+			std::cin>>bricks[N-i-1];
 
 		for(int i = 0; i < N; i++)
-			cout<<bricks[N-i-1]<<" ";
+			std::cout<<bricks[N-i-1]<<" ";
 
 		sum[0] = bricks[0];
 		for(int i = 1; i < N; i++) {
@@ -25,7 +25,7 @@ int main()
 		if(N < 4)
       {
 			// Edge case
-			cout<<sum[N-1]<<"\n";
+			std::cout<<sum[N-1]<<"\n";
 			T--;
 		}
 		else
@@ -43,7 +43,7 @@ int main()
 				dp[i] = max(dp[i], sum[i] - dp[i-2]); // 2 bricks
 				dp[i] = max(dp[i], sum[i] - dp[i-1]); // 1 brick
 			}
-			cout<<dp[N-1]<<"\n";
+			std::cout<<dp[N-1]<<"\n";
 			T--;
 		}
 	}

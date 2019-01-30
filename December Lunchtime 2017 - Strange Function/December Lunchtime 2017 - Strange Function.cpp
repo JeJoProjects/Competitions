@@ -1,6 +1,6 @@
 #include <iostream>
-#define ull unsigned long long int
-using namespace std;
+using ull = unsigned long long int;
+
 
 ull special_Function(ull AN)
 {
@@ -36,16 +36,16 @@ int solve(ull A,ull N)
 int main()
 {
    unsigned int T;
-   cin>> T;                         // the number of test cases.
+   std::cin>> T;                         // the number of test cases.
    if(T>=1 && T<=100000)
    {
       for(auto i=0; i<T; ++i)
       {
          ull A=0, N=0;
          int Ans=0;
-         cin>>A >>N;                //The number(A) and its power(N)
+         std::cin>>A >>N;                //The number(A) and its power(N)
          Ans=solve(A,N);
-         cout<<Ans<<endl;
+         std::cout<<Ans<<std::endl;
       }
    }
    return 0;

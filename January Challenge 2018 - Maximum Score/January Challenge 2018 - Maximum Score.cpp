@@ -1,25 +1,25 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
-using namespace std;
-#define ull unsigned long long int
+
+using ull = unsigned long long int;
 
 class SegmentTree
 {
 private:
    ull n;
-	vector<ull> data;
+	std::vector<ull> data;
 public:
 	SegmentTree(ull count)                   // array initialization constructor.
 	{
 		this->n    = count;                   // the size of the array.
-		this->data = vector<ull>(2 * n, 0);   // initialize the vector with 2n.
+		this->data = std::vector<ull>(2 * n, 0);   // initialize the std::vector with 2n.
 	}
 
-	SegmentTree(vector<ull> const &values)
-	{  // vector initialization constructor.
+	SegmentTree(std::vector<ull> const &values)
+	{  // std::vector initialization constructor.
 		this->n = values.size();
-		this->data = vector<ull>(2 * n);
+		this->data = std::vector<ull>(2 * n);
 		copy(values.begin(), values.end(), &data[0] + n);
 		for (auto idx = n - 1; idx > 0; idx--)
 			data[idx] = max(data[idx * 2], data[idx * 2 + 1]);
@@ -42,7 +42,7 @@ public:
 
 	ull Range_Max(ull left, ull right)          // interval [left, right).
 	{
-		//int result = numeric_limits<int>::max();   // set minimum to infinity.
+		//int result = numeric_limits<int>::max();   // std::set minimum to infinity.
 		left += n;                                   // both left & right index+1.
 		right += n;
 
@@ -61,13 +61,13 @@ public:
 int main()
 {
    unsigned int T=0;         //T denoting the number of test cases.
-   cin>>T;
+   std::cin>>T;
    if(1 <= T && T<=10)
    {
       for(unsigned int queri=0; queri<T; ++queri)
       {
          unsigned int N=0; //each test case contains a single integer N.
-         cin>>N;
+         std::cin>>N;
          if(1 <= N && N<= 700)
          {
             SegmentTree st_max(N*N);
@@ -76,17 +76,17 @@ int main()
 
             for(ull i=0; i<(N*N); ++i)
             {
-               cin>>temp;
+               std::cin>>temp;
                st_max.updateST(i,temp);
             }
 
             //for (ull i = 0; i < (N*N); i++)
-               //cout << i << ": " << st_max.Range_Max(i, i+1) << endl;
+               //std::cout << i << ": " << st_max.Range_Max(i, i+1) << std::endl;
 
             for(ull i=0; i<(N*N); i=i+N)
             {
                Max_Ni=st_max.Range_Max(i, i+N);
-               //cout<<Max_Ni<<endl;
+               //std::cout<<Max_Ni<<std::endl;
                if(Max_Ni>Max_pre)
                {
                   Sum+=Max_Ni;
@@ -98,7 +98,7 @@ int main()
                   break;
                }
             }
-            (possible) ? cout<<Sum<<endl: cout<<-1<<endl;
+            (possible) ? std::cout<<Sum<<std::endl: std::cout<<-1<<std::endl;
          }
       }
    }

@@ -10,11 +10,11 @@
 // Time Complexity : O(N) */
 
 #include <iostream>
-#include <string>
-#include <vector>
+#include <std::string>
+#include <std::vector>
 #include <algorithm>
 
-bool solution(std::vector<int> &A)
+bool solution(std::std::vector<int> &A)
 {
     int leftIndex = -1;
     int rightIndex = -1;
@@ -37,12 +37,12 @@ bool solution(std::vector<int> &A)
 
 int main()
 {
-  std::vector<int> v{1, 5, 3, 3, 7};
-  std::cout << solution(v)<<std::endl;
-  std::vector<int> v1{1, 3, 5, 3, 4};
-  std::cout << solution(v1)<<std::endl;
-  std::vector<int> v2{1, 3, 5};
-  std::cout << solution(v2)<<std::endl;
+  std::std::vector<int> v{1, 5, 3, 3, 7};
+  std::std::cout << solution(v)<<std::std::endl;
+  std::std::vector<int> v1{1, 3, 5, 3, 4};
+  std::std::cout << solution(v1)<<std::std::endl;
+  std::std::vector<int> v2{1, 3, 5};
+  std::std::cout << solution(v2)<<std::std::endl;
 
   return 0;
 }

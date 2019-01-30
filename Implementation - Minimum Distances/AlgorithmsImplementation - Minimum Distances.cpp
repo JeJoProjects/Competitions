@@ -1,17 +1,17 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 #include <iterator>
 #include <cmath>
 int main()
 {
-    int n; std::cin>>n;
-    std::vector<std::pair<int,int>> vec;
+    int n; std::std::cin>>n;
+    std::std::vector<std::pair<int,int>> vec;
     vec.reserve(n);
 
     for(int i=0; i<n; ++i)
     {
-        int temp; std::cin>>temp;
+        int temp; std::std::cin>>temp;
         vec.emplace_back(std::make_pair(temp, i));
     }
     std::sort(vec.begin(),vec.end());
@@ -20,7 +20,7 @@ int main()
         if( (*itr).first == (*(itr+1)).first )
             answer = std::min(answer, abs((*itr).second - (*(itr+1)).second));
 
-    (answer == n) ? std::cout << "-1" << std::endl :
-                    std::cout << answer << std::endl;
+    (answer == n) ? std::std::cout << "-1" << std::std::endl :
+                    std::std::cout << answer << std::std::endl;
     return 0;
 }

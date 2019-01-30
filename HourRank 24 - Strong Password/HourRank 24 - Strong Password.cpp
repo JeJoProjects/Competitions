@@ -1,5 +1,5 @@
 #include "bits/stdc++.h"
-using namespace std;
+
 
 const int N = 200005;
 
@@ -12,10 +12,10 @@ int get(char c) {
 
 int main() {
    int n;
-   string s;
+   std::string s;
 
-   cin >> n;
-   cin >> s;
+   std::cin >> n;
+   std::cin >> s;
 
    int ans = 0;
 
@@ -23,7 +23,7 @@ int main() {
       ans |= (1 << get(s[i]));
    }
 
-   cout << max(6 - n, 4 - __builtin_popcount(ans));
+   std::cout << max(6 - n, 4 - __builtin_popcount(ans));
    return 0;
 }
 

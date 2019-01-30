@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 
 int main()
 {
    unsigned int n=0, SWAPS=0;
-   cin >> n; //  number of elements in array or size
-   vector<int> arr(n);
+   std::cin >> n; //  number of elements in array or size
+   std::vector<int> arr(n);
    for(unsigned int a_i = 0; a_i < n; a_i++)
-       cin >> arr[a_i];
+       std::cin >> arr[a_i];
 
    for(unsigned int i=0; i<n; ++i)
    {
@@ -19,10 +19,10 @@ int main()
          }
       if(SWAPS==0)
          break;
-      cout<<"Loop"<<endl;
+      std::cout<<"Loop"<<std::endl;
    }
-   cout<<"Array is sorted in "<<SWAPS<<" swaps."<<endl;
-   cout<<"First Element: "<<arr[0]<<endl;
-   cout<<"Last Element: "<<arr[n-1]<<endl;
+   std::cout<<"Array is sorted in "<<SWAPS<<" swaps."<<std::endl;
+   std::cout<<"First Element: "<<arr[0]<<std::endl;
+   std::cout<<"Last Element: "<<arr[n-1]<<std::endl;
    return 0;
 }

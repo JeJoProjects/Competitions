@@ -1,20 +1,20 @@
-#include <string>
+#include <std::string>
 #include <iostream>
-using namespace std;
+
 
 
 int main()
 {
-    string S;
-    cin >> S;
+    std::string S;
+    std::cin >> S;
     try
     {
         int Num=stoi(S);
-        cout<<Num<<endl;
+        std::cout<<Num<<std::endl;
     }
     catch(exception a)
     {
-        cout<<"Bad String"<<endl;
+        std::cout<<"Bad std::string"<<std::endl;
     }
 
     return 0;

@@ -1,28 +1,28 @@
 #include <iostream>
-#include <set>
+#include <std::set>
 #include <iterator>
-using namespace std;
+
 
 int main()
 {
    ios_base::sync_with_stdio(false);
-   cin.tie(0);
+   std::cin.tie(0);
 
-   int T; cin>>T;
+   int T; std::cin>>T;
    for(int t=0; t<T; ++t)
    {
-      int N; cin>> N;
-      multiset<int> player1, player2;
+      int N; std::cin>> N;
+      std::multiset<int> player1, player2;
 
       for(int n=0; n<N; ++n)
       {
          int temp;
-         cin>>temp;
+         std::cin>>temp;
          (n%2 == 0) ? player1.emplace(temp) : player2.emplace(temp);
       }
 
-      multiset<int>::reverse_iterator ply1 = player1.rbegin();
-      multiset<int>::reverse_iterator ply2 = player2.rbegin();
+      std::multiset<int>::reverse_iterator ply1 = player1.rbegin();
+      std::multiset<int>::reverse_iterator ply2 = player2.rbegin();
       int P1 = 0, P2 = 0;
       for(int i = 0; i<(N/2); ++i)
       {
@@ -31,9 +31,9 @@ int main()
          ++ply2;
       }
 
-      if(P1 == P2)      cout<<"draw"<<endl;
-      else if(P1>P2)    cout<<"1"<<endl;
-      else              cout<<"2"<<endl;
+      if(P1 == P2)      std::cout<<"draw"<<std::endl;
+      else if(P1>P2)    std::cout<<"1"<<std::endl;
+      else              std::cout<<"2"<<std::endl;
    }
    return 0;
 }

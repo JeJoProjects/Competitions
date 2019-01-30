@@ -1,29 +1,29 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
-#include <set>
+#include <std::vector>
+#include <std::set>
 #include <list>
 #include <iterator>
-using namespace std;
-#define ull unsigned long long int
+
+using ull = unsigned long long int;
 int main()
 {
    ios_base::sync_with_stdio(false);
-   cin.tie(0);
+   std::cin.tie(0);
 
-   ull T=0; cin>>T;
+   ull T=0; std::cin>>T;
    for(auto t=0; t<T; ++t)
    {
-      ull size, temp=0;   cin>>size;
+      ull size, temp=0;   std::cin>>size;
       list<ull> mylist;
-      set<ull> repested;
+      std::set<ull> repested;
 
-      cin>>temp;    // first value
+      std::cin>>temp;    // first value
       mylist.push_back(temp);
 
       for(auto it=1; it<size; ++it)
       {
-         cin>>temp;
+         std::cin>>temp;
          list<ull>::iterator itr=find(mylist.begin(), mylist.end(), temp);
          if(itr==mylist.end())
             mylist.push_back(temp);
@@ -42,20 +42,20 @@ int main()
       }
 
       for(auto it: mylist)
-         cout<<it<<" ";
+         std::cout<<it<<" ";
 
-      cout<<endl;
+      std::cout<<std::endl;
 
       // OR but following will sort automatically
-      /*set<ull> vec;
-      set<ull> repested;
+      /*std::set<ull> vec;
+      std::set<ull> repested;
 
 
       for(auto itr=0; itr<size; ++itr)
       {
          ull temp;
-         cin>>temp;
-         pair<set<ull>::iterator, bool> ret;
+         std::cin>>temp;
+         pair<std::set<ull>::iterator, bool> ret;
          ret=vec.insert(temp);
          if(ret.second==false)
             repested.insert(temp);
@@ -65,9 +65,9 @@ int main()
          vec.erase(*itr);
 
       for(auto &it: vec)
-         cout<<it<<" ";
+         std::cout<<it<<" ";
 
-         cout<<endl;*/
+         std::cout<<std::endl;*/
    }
    return 0;
 }

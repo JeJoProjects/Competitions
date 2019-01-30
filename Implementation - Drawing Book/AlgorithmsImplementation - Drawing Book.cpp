@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 
 unsigned int solve(unsigned int n, unsigned int p)
 {
@@ -38,14 +38,14 @@ unsigned int solve(unsigned int n, unsigned int p)
 int main()
 {
     unsigned int n=0,p=0; // total pages
-    cin >> n;
+    std::cin >> n;
     if(n>=1 && n<=100000)
     {
-        cin >> p;        // need to be found
+        std::cin >> p;        // need to be found
         if(p>=1 && p<=n)
         {
             unsigned int result = solve(n, p);
-            cout << result << endl;
+            std::cout << result << std::endl;
         }
     }
     return 0;

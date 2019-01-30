@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <vector>
+#include <std::vector>
 
 class Server
 {
@@ -14,7 +14,7 @@ public:
         {
 			throw std::invalid_argument("A is negative");
 		}
-		std::vector<int> v(A, 0);
+		std::std::vector<int> v(A, 0);
 		int real = -1, cmplx = sqrt(-1);
 		if(B == 0)
             throw 0;
@@ -31,29 +31,29 @@ int Server::m_load = 0;
 
 int main()
 {
-	int T; std::cin >> T;
+	int T; std::std::cin >> T;
 	while(T--)
     {
 		long long A, B;
-		std::cin >> A >> B;
+		std::std::cin >> A >> B;
 
 		try
 		{
-		    std::cout<< Server::compute(A,B)<<std::endl;
+		    std::std::cout<< Server::compute(A,B)<<std::std::endl;
 		}
 		catch (std::bad_alloc& error)
 		{
-            std::cout<<"Not enough Memory"<<std::endl;
+            std::std::cout<<"Not enough Memory"<<std::std::endl;
 		}
 		catch (std::exception& error)
 		{
-		    std::cout<<"Exception: "<<error.what()<<std::endl;
+		    std::std::cout<<"Exception: "<<error.what()<<std::std::endl;
 		}
 		catch(...)
         {
-            std::cout<<"Other Exception"<<std::endl;
+            std::std::cout<<"Other Exception"<<std::std::endl;
         }
     }
-	std::cout << Server::getLoad() << std::endl;
+	std::std::cout << Server::getLoad() << std::std::endl;
 	return 0;
 }

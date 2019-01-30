@@ -1,8 +1,8 @@
 #include <iostream>
-#include <vector>
-using namespace std;
+#include <std::vector>
 
-string canConstruct(vector <unsigned long long int> a)
+
+std::string canConstruct(std::vector <unsigned long long int> a)
 {
     unsigned long long sum=0;
     for(auto itr=a.begin(); itr!=a.end(); ++itr)
@@ -15,24 +15,24 @@ string canConstruct(vector <unsigned long long int> a)
 int main()
 {
    ios_base::sync_with_stdio(false);
-   cin.tie(nullptr);
+   std::cin.tie(nullptr);
 
     int t;
-    cin >> t;
+    std::cin >> t;
     if(1<=t && t<=100)
     {
        for(auto a0 = 0; a0 < t; a0++)
        {
           int n;
-         cin >> n;
+         std::cin >> n;
          if(1<=n && n<=100)
          {
-            vector<unsigned long long int> a(n);
+            std::vector<unsigned long long int> a(n);
             for(auto itr=a.begin(); itr!=a.end(); ++itr)
-               cin>>*itr;
+               std::cin>>*itr;
 
-            string result = canConstruct(a);
-            cout << result << endl;
+            std::string result = canConstruct(a);
+            std::cout << result << std::endl;
          }
        }
     }

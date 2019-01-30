@@ -1,26 +1,26 @@
 #include <cmath>
 #include <limits>
-#include <set>
-#include <vector>
+#include <std::set>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
 #include <iterator>
-using namespace std;
 
-#define ull unsigned long long int
+
+using ull = unsigned long long int;
 int main()
 {
     ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
+    std::cin.tie(0);
+    std::cout.tie(0);
 
     ull n, miles=0;
-    cin>>n;
-    multiset<ull> mySet;
+    std::cin>>n;
+    std::multiset<ull> mySet;
     for(auto i=0; i<n;++i)
     {
        ull temp=0;
-       cin>>temp;
+       std::cin>>temp;
        mySet.insert(temp);
     }
 
@@ -42,8 +42,8 @@ int main()
           ++idx;
        }
     if(a < (b+c) )
-      cout<<c <<" "<<b <<" "<<a<<endl;
+      std::cout<<c <<" "<<b <<" "<<a<<std::endl;
     else
-      cout<<"-1"<<endl;
+      std::cout<<"-1"<<std::endl;
     return 0;
 }

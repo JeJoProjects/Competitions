@@ -1,11 +1,11 @@
-/** For the given set of queries find the Unique element
+/** For the given std::set of queries find the Unique element
  *  count of an array using MO's Algorithum. */
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 #include <iterator>
 #include <unordered_map>
-using namespace std;
+
 
 struct Query   // struct for storing the queries
 {
@@ -14,7 +14,7 @@ struct Query   // struct for storing the queries
     int Index;
 };
 
-inline void Add(const int i, int &ans, vector<int> &Arr, vector<int> &countArray)
+inline void Add(const int i, int &ans, std::vector<int> &Arr, std::vector<int> &countArray)
 {
     ++countArray[Arr[i]];
     if(countArray[Arr[i]] == 1)
@@ -24,7 +24,7 @@ inline void Add(const int i, int &ans, vector<int> &Arr, vector<int> &countArray
 }
 
 
-inline  void Remove(const int i, int &ans, vector<int> &Arr, vector<int> &countArray)
+inline  void Remove(const int i, int &ans, std::vector<int> &Arr, std::vector<int> &countArray)
 {
     --countArray[Arr[i]];
     if(countArray[Arr[i]] == 1)
@@ -36,33 +36,33 @@ inline  void Remove(const int i, int &ans, vector<int> &Arr, vector<int> &countA
 int main()
 {
     ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
 
-    int _size;    cin >> _size;
+    int _size;    std::cin >> _size;
 
-    vector<int> Arr;                            Arr.reserve(_size);
-    copy_n(istream_iterator<int>(cin), _size, back_inserter(Arr));
-    //copy(Arr.cbegin(), Arr.cend(), ostream_iterator<int>(cout, "\t"));
+    std::vector<int> Arr;                            Arr.reserve(_size);
+    copy_n(istream_iterator<int>(std::cin), _size, back_inserter(Arr));
+    //copy(Arr.cbegin(), Arr.cend(), ostream_iterator<int>(std::cout, "\t"));
 
     int id = -1;
     int sqrt_n = sqrt(_size);
-    int Q;      cin >> Q;
-    vector<Query> qArr(Q);
-    unordered_map<int, int> Map;
+    int Q;      std::cin >> Q;
+    std::vector<Query> qArr(Q);
+    unordered_map<int, int> std::map;
 
     for (int i = 0; i < _size; ++i)
     {
-        if (Map.count(Arr[i]) == 0)
-            Map[Arr[i]] = ++id;
-        Arr[i] = Map[Arr[i]];
+        if (std::map.count(Arr[i]) == 0)
+            std::map[Arr[i]] = ++id;
+        Arr[i] = std::map[Arr[i]];
     }
 
     // read queries
     for (int i = 0; i < Q; ++i)
     {
         int L,R;
-        cin >> L >> R;
+        std::cin >> L >> R;
         qArr[i].Left  = L-1;
         qArr[i].Right = R-1;
         qArr[i].Index = i;
@@ -79,8 +79,8 @@ int main()
     int currStart = 0;
     int currEnd   = 0;
     int tempAnswer= 0;
-    vector<int> Answer(Q);
-    vector<int> countArray(_size);
+    std::vector<int> Answer(Q);
+    std::vector<int> countArray(_size);
     for (int i = 0; i < Q; ++i)
     {
         int L = qArr[i].Left;
@@ -118,7 +118,7 @@ int main()
         Answer[qArr[i].Index] = tempAnswer;
     }
 
-    for(const auto &it: Answer) cout<<it<<endl;
+    for(const auto &it: Answer) std::cout<<it<<std::endl;
 
     return 0;
 }

@@ -2,7 +2,7 @@
 #include <cmath>
 
 
-using namespace std;
+
 
 int main()
 {
@@ -10,18 +10,18 @@ int main()
    int tipPer;
    int taxPer;
 
-   cin>>mCost;
-   cin>>tipPer;
-   cin>>taxPer;
+   std::cin>>mCost;
+   std::cin>>tipPer;
+   std::cin>>taxPer;
 
-   /*cout.setf(ios::fixed);  do not need them round() will manage everything!
-   cout.setf(ios::showpoint);
-   cout.precision(0);*/
+   /*std::cout.setf(ios::fixed);  do not need them round() will manage everything!
+   std::cout.setf(ios::showpoint);
+   std::cout.precision(0);*/
    double tip=mCost*tipPer/100;
    double tax=mCost*taxPer/100;
    tCost=mCost+tip+tax;
 
-   cout<<"The total meal cost is "<<round(tCost)<<" dollars."<<endl;
+   std::cout<<"The total meal cost is "<<round(tCost)<<" dollars."<<std::endl;
 
 return 0;
 }

@@ -1,9 +1,9 @@
 #include <cmath>
 #include <cstdio>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-using namespace std;
+
 
 
 int solveMeFirst(int a, int b) {
@@ -13,8 +13,8 @@ int solveMeFirst(int a, int b) {
 int main() {
     int num1, num2;
     int sum;
-    cin>>num1>>num2;
+    std::cin>>num1>>num2;
     sum = solveMeFirst(num1,num2);
-    cout<<sum;
+    std::cout<<sum;
     return 0;
 }

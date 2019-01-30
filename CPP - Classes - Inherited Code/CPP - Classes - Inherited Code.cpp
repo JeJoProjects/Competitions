@@ -13,7 +13,7 @@ public:
     const int& what()const {    return m_length;    }
 };
 
-bool checkUsername(std::string username)
+bool checkUsername(std::std::string username)
 {
 	bool isValid = true;
 	int n = username.length();
@@ -30,20 +30,20 @@ bool checkUsername(std::string username)
 
 int main()
 {
-	int T; std::cin >> T;
+	int T; std::std::cin >> T;
 	while(T--)
     {
-		std::string username;
-		std::cin >> username;
+		std::std::string username;
+		std::std::cin >> username;
 		try
 		{
 			bool isValid = checkUsername(username);
-			(isValid) ? std::cout << "Valid" << '\n':
-                        std::cout << "Invalid" << '\n';
+			(isValid) ? std::std::cout << "Valid" << '\n':
+                        std::std::cout << "Invalid" << '\n';
 		}
 		catch (BadLengthException e)
 		{
-			std::cout << "Too short: " << e.what() << '\n';
+			std::std::cout << "Too short: " << e.what() << '\n';
 		}
 	}
 	return 0;

@@ -1,28 +1,28 @@
 #include <iostream>
-#include <vector>
-using namespace std;
+#include <std::vector>
+
 //*********************************************************************************
 class Person
 {
    //private is also available but no accessible for child class.
    // only available in class public section
 	protected:   //user 2 or sub class will get it
-		string firstName;
-		string lastName;
+		std::string firstName;
+		std::string lastName;
 		int id;
 	public:
-		Person(string firstName, string lastName, int identification)
+		Person(std::string firstName, std::string lastName, int identification)
 		{
 			this->firstName = firstName;
 			this->lastName = lastName;
 			this->id = identification;
 		}
 		void printPerson(){
-			cout<< "Name: "<< lastName << ", "<< firstName <<"\nID: "<< id << "\n";
+			std::cout<< "Name: "<< lastName << ", "<< firstName <<"\nID: "<< id << "\n";
 		}
 		~Person()
 		{
-			cout<<"nothing left in Person"<<endl;
+			std::cout<<"nothing left in Person"<<std::endl;
 		}
 
 };
@@ -30,11 +30,11 @@ class Person
 class Student :  public Person
 {
 	private:
-		vector<int> testScores;
+		std::vector<int> testScores;
 		int sum=0, subs=0;
 		double avg=0.0;
 	public:
-	   Student(string firstN, string lastN, int idS, vector<int> scores): Person(firstN,lastN,idS)
+	   Student(std::string firstN, std::string lastN, int idS, std::vector<int> scores): Person(firstN,lastN,idS)
 	   {
 	     this->testScores=scores;
 	     subs=testScores.size();
@@ -63,25 +63,25 @@ class Student :  public Person
         }
    ~Student()
    {
-      cout<<"nothing  in Student"<<endl;
+      std::cout<<"nothing  in Student"<<std::endl;
    }
 };
 //*********************************************************************************
 int main() {
-	string firstName;
-  	string lastName;
+	std::string firstName;
+  	std::string lastName;
 	int id;
   	int numScores;
-	cin >> firstName >> lastName >> id >> numScores;
-  	vector<int> scores;
+	std::cin >> firstName >> lastName >> id >> numScores;
+  	std::vector<int> scores;
   	for(int i = 0; i < numScores; i++){
 	  	int tmpScore;
-	  	cin >> tmpScore;
+	  	std::cin >> tmpScore;
 		scores.push_back(tmpScore);
 	}
 	Student* s = new Student(firstName, lastName, id, scores);
 	s->printPerson();
-	cout << "Grade: " << s->calculate() << "\n";
+	std::cout << "Grade: " << s->calculate() << "\n";
 	Student S(firstName, lastName, id, scores);
 	return 0;
 }

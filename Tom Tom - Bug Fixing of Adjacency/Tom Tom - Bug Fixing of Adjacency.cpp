@@ -1,10 +1,10 @@
 #include <algorithm>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <iterator>
-using namespace std;
 
-int solution(vector<int> & A)
+
+int solution(std::vector<int> & A)
 {
     int n = A.size();
     int result = 0;
@@ -32,9 +32,9 @@ int solution(vector<int> & A)
 int main()
 {
 
-    vector<int> A={1, 1, 0, 1, 0, 0};
+    std::vector<int> A={1, 1, 0, 1, 0, 0};
 
 
-    cout<<solution(A)<<endl;
+    std::cout<<solution(A)<<std::endl;
     return 0;
 }

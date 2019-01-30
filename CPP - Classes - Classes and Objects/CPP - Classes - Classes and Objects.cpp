@@ -1,10 +1,10 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 
 class Student
 {
 private:
-    std::vector<int> m_scores;
+    std::std::vector<int> m_scores;
     int m_sum;
 public:
     Student()
@@ -18,7 +18,7 @@ public:
         for(auto &it:m_scores)
         {
             int temp;
-            std::cin>> temp;
+            std::std::cin>> temp;
             it = temp;
             m_sum += temp;
         }
@@ -29,7 +29,7 @@ public:
 int main()
 {
     int n; // number of students
-    std::cin >> n;
+    std::std::cin >> n;
     Student *s = new Student[n]; // an array of n students
 
     for(int i = 0; i < n; i++){
@@ -49,7 +49,7 @@ int main()
     }
 
     // print result
-    std::cout << count;
+    std::std::cout << count;
 
     return 0;
 }

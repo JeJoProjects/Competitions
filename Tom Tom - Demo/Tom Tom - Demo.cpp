@@ -1,10 +1,10 @@
 #include <algorithm>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <iterator>
-using namespace std;
 
-int solution(vector<int> &A)
+
+int solution(std::vector<int> &A)
 {
     // write your code in C++14 (g++ 6.2.0)
     sort(A.begin(), A.end());
@@ -23,11 +23,11 @@ int solution(vector<int> &A)
 
 int main()
 {
-    int n; cin>>n;
-    vector<int> A; A.reserve(n);
-    copy_n(istream_iterator<int>(cin), n, back_inserter(A));
+    int n; std::cin>>n;
+    std::vector<int> A; A.reserve(n);
+    copy_n(istream_iterator<int>(std::cin), n, back_inserter(A));
 
-    cout<<solution(A)<<endl;
+    std::cout<<solution(A)<<std::endl;
     return 0;
 }
 

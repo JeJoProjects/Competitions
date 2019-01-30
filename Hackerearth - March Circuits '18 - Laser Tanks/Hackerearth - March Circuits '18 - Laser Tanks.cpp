@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 #define ll long long
 #define fr freopen("in.txt","r",stdin)
 #define rep(i,n) for(int i=0;i<n;i++)
@@ -13,17 +13,17 @@ ll V[1011][1011];
 ll dp[1011][1011];
 int main() {
     int N;
-    cin >> N;
+    std::cin >> N;
     ll ans = 0;
     ll sum = 0;
     frep(i,N) {
         frep(j,N) {
-            cin >> H[i][j];
+            std::cin >> H[i][j];
         }
     }
     frep(i,N) {
         frep(j,N) {
-            cin >> V[i][j];
+            std::cin >> V[i][j];
             sum += V[i][j];
         }
     }
@@ -40,5 +40,5 @@ int main() {
     frep(j,N) {
         ans = max(ans,sum+dp[N][j]);
     }
-    cout << ans;
+    std::cout << ans;
 }

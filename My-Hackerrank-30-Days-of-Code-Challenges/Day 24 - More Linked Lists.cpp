@@ -1,10 +1,10 @@
 #include <cstddef>
 #include <cmath>
 #include <cstdio>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-using namespace std;
+
 class Node
 {
     public:
@@ -97,7 +97,7 @@ class Solution
          Node *start=head;
          while(start)
             {
-               cout<<start->data<<" ";
+               std::cout<<start->data<<" ";
                start=start->next;
             }
       }
@@ -108,10 +108,10 @@ int main()
    Node* head=NULL;
   	Solution mylist;
    int T,data;
-   cin>>T;
+   std::cin>>T;
    while(T-->0)
     {
-        cin>>data;
+        std::cin>>data;
         head=mylist.insert(head,data);
     }
    head=mylist.removeDuplicates(head); // to remove the duplicated list nodes

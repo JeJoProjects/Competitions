@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <queue>
-using namespace std;
+
 
 class Solution
 {
@@ -40,14 +40,14 @@ public:
 
 int main()
 {
-    // read the string s.
-    string s;
-    getline(cin, s);
+    // read the std::string s.
+    std::string s;
+    getline(std::cin, s);
 
   	// create the Solution class object p.
     Solution obj;
 
-    // push/enqueue all the characters of string s to stack.
+    // push/enqueue all the characters of std::string s to stack.
     for (int i = 0; i < s.length(); i++)
       {
         obj.pushCharacter(s[i]);
@@ -68,11 +68,11 @@ int main()
         }
       }
 
-    // finally print whether string s is palindrome or not.
+    // finally print whether std::string s is palindrome or not.
     if (isPalindrome)
-        cout << "The word, " << s << ", is a palindrome.";
+        std::cout << "The word, " << s << ", is a palindrome.";
     else
-        cout << "The word, " << s << ", is not a palindrome.";
+        std::cout << "The word, " << s << ", is not a palindrome.";
 
     return 0;
 }

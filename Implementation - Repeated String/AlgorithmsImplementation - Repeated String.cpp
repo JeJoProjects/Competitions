@@ -2,7 +2,7 @@
 typedef unsigned long long int  uint64;
 typedef unsigned int            uint16;
 
-void repeatedChars(const std::string& str, const uint64& N)
+void repeatedChars(const std::std::string& str, const uint64& N)
 {
     const uint16 Size = str.length();
     uint64 count1 = 0;      // to count untill exactly divisible part
@@ -15,13 +15,13 @@ void repeatedChars(const std::string& str, const uint64& N)
         if(str[i]=='a' && i<remainder)  ++count2;
     }
     count1 *= (N/Size);      //the exactly divisible part
-    std::cout << count1+count2 << std::endl;
+    std::std::cout << count1+count2 << std::std::endl;
 }
 
 int main()
 {
-    std::string str;    std::cin>> str;
-    uint64 N ;          std::cin>>N;
+    std::std::string str;    std::std::cin>> str;
+    uint64 N ;          std::std::cin>>N;
     repeatedChars(str,N);
     return 0;
 }

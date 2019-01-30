@@ -1,17 +1,17 @@
 #include <iostream>
 #include <iomanip>
-using namespace std;
+
 
 int main(){
     int h, m, s;
     char ch, aorp;
 
-    cin >> h >> ch >> m >> ch >> s >> aorp >> ch;
+    std::cin >> h >> ch >> m >> ch >> s >> aorp >> ch;
     h = (aorp == 'A') ? (h==12 ? 0 : h) : (h==12 ? 12 : h+12);
 
-    cout << setw(2) << setfill('0') << h << ":"
+    std::cout << setw(2) << setfill('0') << h << ":"
          << setw(2) << setfill('0') << m << ":"
-         << setw(2) << setfill('0') << s << endl;
+         << setw(2) << setfill('0') << s << std::endl;
 
     return 0;
 }
@@ -20,11 +20,11 @@ int main(){
 #include<iostream>
 #include<cstdio>
 
-using namespace std;
+
 
 int main() {
-    string s;
-    cin >> s;
+    std::string s;
+    std::cin >> s;
 
     int n = s.length();
     int hh, mm, ss;

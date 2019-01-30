@@ -1,18 +1,18 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 #include <iterator>
-using namespace std;
-#define ull unsigned long long int
+
+using ull = unsigned long long int;
 #define lli long long int
 #define uli unsigned long int
 
-lli maxSubArraySum(vector<lli> arr)//, ull size) // Time Complexity O(n)
+lli maxSubArraySum(std::vector<lli> arr)//, ull size) // Time Complexity O(n)
 {
    lli max_so_far = arr[0];
    lli curr_max = arr[0];
 
-   vector<lli>::iterator itr;
+   std::vector<lli>::iterator itr;
    for(itr= arr.begin()+1; itr!=arr.end(); ++itr)
    {
         curr_max = max(*itr, curr_max+(*itr));
@@ -24,34 +24,34 @@ lli maxSubArraySum(vector<lli> arr)//, ull size) // Time Complexity O(n)
 int main()
 {
    ios_base::sync_with_stdio(false);
-   cin.tie(nullptr);
-   cout.tie(nullptr);
+   std::cin.tie(nullptr);
+   std::cout.tie(nullptr);
 
    uli T=0;     //T denoting the number of test cases.
-   cin>>T;
+   std::cin>>T;
    if(1 <= T && T<=10)
    {
       for(uli queri=0; queri<T; ++queri)
       {
          ull N=0, K=0; // array A with size N (indexed from 0) and an integer K.
-         cin>> N >> K;
+         std::cin>> N >> K;
          if( (1 <= N && N <= 100000) && (1 <= K && K<= 100000) )
          {
-            vector<lli> A(N), B(N*K);
+            std::vector<lli> A(N), B(N*K);
 
-            vector<lli>::iterator itr=A.begin();
+            std::vector<lli>::iterator itr=A.begin();
             ull idx=0;
 
             for(; itr!=A.end(); ++itr)
                {
-                  cin>>*itr;
+                  std::cin>>*itr;
                   for(ull i=idx; i< (N*K) ; i=i+N)
                      B[i]=*itr;
 
                   ++idx;
                }
-            //cout<< Maximum_Sum_Subarray(B)<<"\n";
-            cout<< maxSubArraySum(B)<<endl;//, B.size()) <<endl;
+            //std::cout<< Maximum_Sum_Subarray(B)<<"\n";
+            std::cout<< maxSubArraySum(B)<<std::endl;//, B.size()) <<std::endl;
          }
       }
    }

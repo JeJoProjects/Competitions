@@ -1,13 +1,13 @@
 #include <iostream>
-#include <string>
-using namespace std;
+#include <std::string>
+
 
 #include <cctype>
-string name2Initial(const std::string &S)
+std::string name2Initial(const std::std::string &S)
 {
     const int Size = S.size();
-    std::string str;    str.clear();
-    std::string answer; answer.clear();
+    std::std::string str;    str.clear();
+    std::std::string answer; answer.clear();
 
     for(auto i=0; i<Size; ++i)
     {
@@ -35,9 +35,9 @@ string name2Initial(const std::string &S)
 
 int main()
 {
-    std::string A;
-    getline(cin,A);
+    std::std::string A;
+    getline(std::cin,A);
 
-    std::cout<<name2Initial(A)<<std::endl;
+    std::std::cout<<name2Initial(A)<<std::std::endl;
     return 0;
 }

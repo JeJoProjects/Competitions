@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 
 template<typename T>
-constexpr string collisionCheck(T &n, vector<T> &height, vector<T> &position)
+constexpr std::string collisionCheck(T &n, std::vector<T> &height, std::vector<T> &position)
 {
     T sumFront    = 0;
     T sumBack     = 0;
@@ -36,19 +36,19 @@ constexpr string collisionCheck(T &n, vector<T> &height, vector<T> &position)
 int main()
 {
     ios_base::sync_with_stdio(false);
-    cin.tie(0); cout.tie(0);
+    std::cin.tie(0); std::cout.tie(0);
 
-    int n; cin>>n;
+    int n; std::cin>>n;
 
-    vector<int> position;
+    std::vector<int> position;
     position.reserve(n);
-    copy_n(istream_iterator<int>(cin), n, back_inserter(position));
+    copy_n(istream_iterator<int>(std::cin), n, back_inserter(position));
 
-    vector<int>  height;
+    std::vector<int>  height;
     height.reserve(n);
-    copy_n(istream_iterator<int>(cin), n, back_inserter(height));
+    copy_n(istream_iterator<int>(std::cin), n, back_inserter(height));
 
-    cout<<collisionCheck(n, height, position)<<endl;
+    std::cout<<collisionCheck(n, height, position)<<std::endl;
 
     return 0;
 }

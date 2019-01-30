@@ -1,27 +1,27 @@
 #include <iostream>
-#include <map>
+#include <std::map>
 
 int main()
 {
-    int n; std::cin >> n;
-    std::map<int,int> Map;
+    int n; std::std::cin >> n;
+    std::std::map<int,int> std::map;
 
     for(int i = 0; i < n; ++i)
     {
-        int temp; std::cin >> temp;
-        Map[temp]++;
+        int temp; std::std::cin >> temp;
+        std::map[temp]++;
     }
 
     int sticks = n; //number of sticks that are cut
-    std::cout << sticks << std::endl;
+    std::std::cout << sticks << std::std::endl;
 
-    if(Map.size() > 1)
+    if(std::map.size() > 1)
     {
-        for(const auto &it: Map)
+        for(const auto &it: std::map)
         {
             sticks -= it.second;
             if(sticks == 0) break;
-            std::cout << sticks << std::endl;
+            std::std::cout << sticks << std::std::endl;
         }
     }
     return 0;

@@ -1,23 +1,23 @@
 #include <cmath>
 #include <cstdio>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-using namespace std;
+
 
 struct Student
 {
     int age;
-    string first_name;
-    string last_name;
+    std::string first_name;
+    std::string last_name;
     int standard;
 };
 
 int main() {
     Student st;
 
-    cin >> st.age >> st.first_name >> st.last_name >> st.standard;
-    cout << st.age << " " << st.first_name << " " << st.last_name << " " << st.standard;
+    std::cin >> st.age >> st.first_name >> st.last_name >> st.standard;
+    std::cout << st.age << " " << st.first_name << " " << st.last_name << " " << st.standard;
 
     return 0;
 }

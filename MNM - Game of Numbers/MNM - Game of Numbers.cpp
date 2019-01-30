@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 
-using namespace std;
+
 
 struct StartEnd {   char starting;  char ending;    };
 constexpr int searching(int arr[],int &j,int &l)
@@ -12,12 +12,12 @@ constexpr int searching(int arr[],int &j,int &l)
 
 inline void checkSequence12_28_8(const int &N)
 {
-    vector<string> Array(N);
+    std::vector<std::string> Array(N);
     struct StartEnd obj[N];
 
     for(int i=0;i<N;i++)
     {
-        cin>>Array[i];
+        std::cin>>Array[i];
         obj[i].starting=Array[i][0];
         obj[i].ending=Array[i][Array[i].length()-1];
     }
@@ -47,13 +47,13 @@ inline void checkSequence12_28_8(const int &N)
             if(countee==N-1)
             {
                 malai=1;
-                cout<<"The door will be opened"<<endl;
+                std::cout<<"The door will be opened"<<std::endl;
                 break;
             }
         }
         if(malai==1)    break;
     }
-    if(malai==0)        cout<<"The door cannot be opened"<<endl;
+    if(malai==0)        std::cout<<"The door cannot be opened"<<std::endl;
 }
 
 inline void CheckSequence12_28_8_looseCode(const int &N)
@@ -61,7 +61,7 @@ inline void CheckSequence12_28_8_looseCode(const int &N)
     int Array[N]={0};
     int PossibleCount=0;
     for(int i=1;i<=N;i++)
-        cin>>Array[i];
+        std::cin>>Array[i];
 
     for(int idx=1; idx<=N; idx++)
     {
@@ -85,17 +85,17 @@ inline void CheckSequence12_28_8_looseCode(const int &N)
         }
     }
     (PossibleCount >= N-1) ?
-            cout<<"The door will be opened"<<endl:
-            cout<<"The door cannot be opened"<<endl;
+            std::cout<<"The door will be opened"<<std::endl:
+            std::cout<<"The door cannot be opened"<<std::endl;
 }
 
 int main()
 {
-    int T;  cin>>T;
+    int T;  std::cin>>T;
 
     while(T--)
     {
-        int N; cin>>N;
+        int N; std::cin>>N;
         //checkSequence12_28_8(N);
         CheckSequence12_28_8_looseCode(N);
     }

@@ -1,26 +1,26 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <iterator>
 #include <algorithm>
-#include <string>
-using namespace std;
+#include <std::string>
+
 #define ui unsigned int
 int main()
 {
    ios_base::sync_with_stdio(false);
-   cin.tie(0);
+   std::cin.tie(0);
 
-   int T; cin>>T;
+   int T; std::cin>>T;
    for(int t=0; t<T; ++t)
    {
       int X;
-      string S, F;
+      std::string S, F;
 
-      cin >> S;
-      cin >> X;
-      cin >> F;
+      std::cin >> S;
+      std::cin >> X;
+      std::cin >> F;
 
-      vector<int> Hr;
+      std::vector<int> Hr;
       int lap = 0, multi = 1;
       for(ui idx = 0; idx< (S.length()-F.length()+1); ++idx)
       {
@@ -53,7 +53,7 @@ int main()
       }
 
       (Hr.size() >= 2) ?
-         cout<<Hr[0]<<" "<<Hr[Hr.size()-1]<<endl : cout<<"-1"<<endl;
+         std::cout<<Hr[0]<<" "<<Hr[Hr.size()-1]<<std::endl : std::cout<<"-1"<<std::endl;
 
    }
    return 0;

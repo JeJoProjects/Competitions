@@ -1,25 +1,25 @@
 #include <iterator>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-#include <string>
-using namespace std;
+#include <std::string>
 
-#define ull unsigned long long int
+
+using ull = unsigned long long int;
 int main()
 {
    ios_base::sync_with_stdio(0);
-   cin.tie(0);
-   cout.tie(0);
+   std::cin.tie(0);
+   std::cout.tie(0);
 
-   ull T=0; cin>>T;
+   ull T=0; std::cin>>T;
    for(unsigned long long int t=0; t<T; ++t)
    {
-      vector<ull> vec={2, 3, 5, 7};
+      std::vector<ull> vec={2, 3, 5, 7};
       ull count=0;
-      string str;
+      std::string str;
 
-      cin>>str; reverse(str.begin(), str.end());
+      std::cin>>str; reverse(str.begin(), str.end());
 
       ull Dig=atoi(str.data());
 
@@ -32,7 +32,7 @@ int main()
          Dig/=10;
       }
 
-      cout<< count<<endl;
+      std::cout<< count<<std::endl;
    }
     return 0;
 }

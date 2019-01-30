@@ -1,14 +1,14 @@
 #include <cmath>
 #include <cstdio>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-using namespace std;
+
 /*********************************************************************** */
 class Person
 {
 public:
-      string name="noname";
+      std::string name="noname";
       unsigned int age=0;
       virtual void getdata()=0; //virtual f(x) but true virtual must be=0
       virtual void putdata()=0;
@@ -30,11 +30,11 @@ public:
     static unsigned int id;         // static ID
     void getdata()
    {
-      cin>> name >> age >> publications;
+      std::cin>> name >> age >> publications;
    }
    void putdata()
    {
-      cout<<name<<" "<<age<<" "<<publications<<" "<<cur_id<<endl;
+      std::cout<<name<<" "<<age<<" "<<publications<<" "<<cur_id<<std::endl;
    }
 };
 unsigned int Professor::id = 0;
@@ -44,7 +44,7 @@ unsigned int Professor::id = 0;
 class Student: public Person
 {
 private:
-   vector<unsigned int> marks;
+   std::vector<unsigned int> marks;
    unsigned int sum=0;
    unsigned int cur_id;
 public:
@@ -56,11 +56,11 @@ public:
 
    void getdata()
    {
-      cin>> name >> age;
+      std::cin>> name >> age;
       for(unsigned int i=0; i<6; ++i)
       {
          unsigned int temp=0;
-         cin>>temp;
+         std::cin>>temp;
          if(temp<=100)
          {
             marks.push_back(temp);
@@ -70,7 +70,7 @@ public:
    }
    void putdata()
    {
-      cout<<name<<" "<<age<<" "<<sum<<" "<<cur_id<<endl;
+      std::cout<<name<<" "<<age<<" "<<sum<<" "<<cur_id<<std::endl;
    }
 };
 unsigned int Student::id = 0;
@@ -81,12 +81,12 @@ int main()
 {
 
     int n, val;
-    cin>>n; //The number of objects that is going to be created.
+    std::cin>>n; //The number of objects that is going to be created.
     Person *per[n];
 
     for(int i = 0;i < n;i++)
     {
-        cin>>val;
+        std::cin>>val;
         if(val == 1)
             // If val is 1 current object is of type Professor
             per[i] = new Professor;

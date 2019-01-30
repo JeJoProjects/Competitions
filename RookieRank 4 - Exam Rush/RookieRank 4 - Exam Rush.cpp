@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 
 typedef unsigned int             uint16;
 typedef unsigned long int        uint32;
@@ -11,10 +11,10 @@ int main()
    uint64 n;
    uint64 t;
 
-   cin>>n>>t;
+   std::cin>>n>>t;
 
-   vector<uint64> vec;  vec.reserve(n);
-   copy_n(istream_iterator<uint64>(cin), n, back_inserter(vec));
+   std::vector<uint64> vec;  vec.reserve(n);
+   copy_n(istream_iterator<uint64>(std::cin), n, back_inserter(vec));
    sort(vec.begin(), vec.end());
 
    uint64 sum = 0;
@@ -25,6 +25,6 @@ int main()
         if(sum<= t)  ++count;
         else           break;
     }
-   cout<<count<<endl;
+   std::cout<<count<<std::endl;
    return 0;
 }

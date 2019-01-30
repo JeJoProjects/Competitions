@@ -1,25 +1,25 @@
 #include <cmath>
 #include <limits>
-#include <set>
+#include <std::set>
 #include <iostream>
 #include <algorithm>
 #include <iterator>
-using namespace std;
+
 
 #define ll long long int
 int main()
 {
     ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
+    std::cin.tie(0);
+    std::cout.tie(0);
 
     ll n, ans=numeric_limits<ll>::max();
-    cin>>n;
-    multiset<ll> mySet;
+    std::cin>>n;
+    std::multiset<ll> mySet;
     for(auto i=0; i<n;++i)
     {
        ll temp=0;
-       cin>>temp;
+       std::cin>>temp;
        mySet.insert(temp);
     }
 
@@ -32,6 +32,6 @@ int main()
 
        }
 
-    cout<<ans<<endl;
+    std::cout<<ans<<std::endl;
     return 0;
 }

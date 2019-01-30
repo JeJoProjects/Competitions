@@ -1,18 +1,18 @@
 #include <iostream>
-#include <map>
+#include <std::map>
 
 int main()
 {
-    int n; std::cin >> n;
-    std::map<int,int> Map;
+    int n; std::std::cin >> n;
+    std::std::map<int,int> std::map;
 
     for(int i = 1; i <= n; ++i)
     {
-        int temp;   std::cin >> temp;
-        Map[temp] = i;
+        int temp;   std::std::cin >> temp;
+        std::map[temp] = i;
     }
 
     for(int i = 1; i <= n; ++i)
-        std::cout << Map[Map[i]] << "\n" ;
+        std::std::cout << std::map[std::map[i]] << "\n" ;
     return 0;
 }

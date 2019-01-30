@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 
 typedef unsigned long long int   uint64;
 typedef long long int            int64;
@@ -7,16 +7,16 @@ typedef long long int            int64;
 int main()
 {
     ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
+    std::cin.tie(0);
+    std::cout.tie(0);
 
-    uint64 T=0; cin>>T;
+    uint64 T=0; std::cin>>T;
     for(uint64 t=0; t<T; ++t )
     {
-        uint64 n,m; cin>>n>>m;
+        uint64 n,m; std::cin>>n>>m;
 
-        vector<int> vec;                      vec.reserve(n*m);
-        copy_n(istream_iterator<int>(cin), n*m, back_inserter(vec));
+        std::vector<int> vec;                      vec.reserve(n*m);
+        copy_n(istream_iterator<int>(std::cin), n*m, back_inserter(vec));
 
         sort(vec.begin(),vec.end());
         reverse(vec.begin(),vec.end());
@@ -28,9 +28,9 @@ int main()
             if(i & 1) Geno+= vec[i];
             else       Cyborg+= vec[i];
         }
-        if(Cyborg > Geno)       cout<<"Cyborg"<<endl;
-        else if(Cyborg < Geno)  cout<<"Geno"<<endl;
-        else                    cout<<"Draw"<<endl;
+        if(Cyborg > Geno)       std::cout<<"Cyborg"<<std::endl;
+        else if(Cyborg < Geno)  std::cout<<"Geno"<<std::endl;
+        else                    std::cout<<"Draw"<<std::endl;
    }
    return 0;
 }

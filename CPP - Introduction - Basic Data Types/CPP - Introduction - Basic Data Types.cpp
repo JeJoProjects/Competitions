@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+
 
 int main() {
     int a=0;
@@ -7,20 +7,20 @@ int main() {
     char c='0';
     float f=0.0;
     double d=0.0000;
-    cin>>a;
-    cin>>b;
-    cin>>c;
-    cin>>f;
-    cin>>d;
+    std::cin>>a;
+    std::cin>>b;
+    std::cin>>c;
+    std::cin>>f;
+    std::cin>>d;
 
-    cout<<a<<endl<<b<<endl<<c<<endl;
-    cout.setf(ios::fixed);
-    cout.setf(ios::showpoint);
-    cout.precision(3);
-    cout<<f<<endl;
-    cout.setf(ios::fixed);
-    cout.setf(ios::showpoint);
-    cout.precision(9);
-    cout<<d<<endl;
+    std::cout<<a<<std::endl<<b<<std::endl<<c<<std::endl;
+    std::cout.setf(ios::fixed);
+    std::cout.setf(ios::showpoint);
+    std::cout.precision(3);
+    std::cout<<f<<std::endl;
+    std::cout.setf(ios::fixed);
+    std::cout.setf(ios::showpoint);
+    std::cout.precision(9);
+    std::cout<<d<<std::endl;
     return 0;
 }

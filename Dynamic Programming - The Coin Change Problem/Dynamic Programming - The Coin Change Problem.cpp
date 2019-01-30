@@ -1,15 +1,15 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <iterator>
 #include <algorithm>
 #include <numeric>
 #include <functional>
-using namespace std;
+
 typedef unsigned long long int uint64;
 
-inline uint64 CoinChangeProblem(int &targetAmt, int &denomination, vector<int> &coins)
+inline uint64 CoinChangeProblem(int &targetAmt, int &denomination, std::vector<int> &coins)
 {
-    vector<uint64> targetVec(targetAmt+1); // to store all target amounts
+    std::vector<uint64> targetVec(targetAmt+1); // to store all target amounts
     for(auto idx = 0; idx<denomination; ++idx)
     {
         if(idx == 0)    targetVec[idx] = 1;
@@ -22,19 +22,19 @@ inline uint64 CoinChangeProblem(int &targetAmt, int &denomination, vector<int> &
         }
     }
     //for(auto &it: targetVec)
-        //cout<<it<<" ";
+        //std::cout<<it<<" ";
     return targetVec[targetAmt];
 }
 
 int main()
 {
     int targetAmt, denomination;
-    cin>>targetAmt;             // target amount,
-    cin>>denomination;          // number of denominations
+    std::cin>>targetAmt;             // target amount,
+    std::cin>>denomination;          // number of denominations
 
-    vector<int> coins; coins.reserve(denomination);
-    copy_n(istream_iterator<int>(cin), denomination, back_inserter(coins));
+    std::vector<int> coins; coins.reserve(denomination);
+    copy_n(istream_iterator<int>(std::cin), denomination, back_inserter(coins));
 
-    cout<<CoinChangeProblem(targetAmt, denomination, coins)<<endl;
+    std::cout<<CoinChangeProblem(targetAmt, denomination, coins)<<std::endl;
     return 0;
 }

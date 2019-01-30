@@ -1,12 +1,12 @@
 #include <iostream>
-using namespace std;
+
 
 int main() {
-	int t,n;string s;
-	cin>>t;
+	int t,n;std::string s;
+	std::cin>>t;
 	while(t--)
 	{
-	    cin>>s;n=s.length();
+	    std::cin>>s;n=s.length();
 	    int i=0,j=n-1;
 
 	    while(s[i]!='c')
@@ -17,6 +17,6 @@ int main() {
 	    for(int k=i+1;k<=j;k++)
          if(s[k]=='a')
             f++;
-	    cout<<f<<endl;
+	    std::cout<<f<<std::endl;
 
 	}

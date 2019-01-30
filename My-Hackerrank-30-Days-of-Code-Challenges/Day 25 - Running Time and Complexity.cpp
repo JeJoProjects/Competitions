@@ -1,17 +1,17 @@
 #include <cmath>
 #include <iostream>
-using namespace std;
+
 //A prime number testing
 int main()
 {
    unsigned int n=1, T=1;
-   cin>>T;                 // the number of test cases.
+   std::cin>>T;                 // the number of test cases.
    if(T>=1 && T<=30)       //Constraints
    {
       for(unsigned int qury=0; qury<T; ++qury)
       {
          bool AnsTest=true; // to check the number prime or not.(default=Prime)
-         cin>>n;            // the number to be tested
+         std::cin>>n;            // the number to be tested
 
          if(n>=1 && n<=2000000000)           //Constraints
          {
@@ -26,9 +26,9 @@ int main()
                   }
 
             if(AnsTest) // Prime: no changes during loop!
-               cout<<"Prime"<<endl;
+               std::cout<<"Prime"<<std::endl;
             else
-               cout<<"Not prime"<<endl;
+               std::cout<<"Not prime"<<std::endl;
          }
       }
    }
@@ -38,7 +38,7 @@ int main()
 
 /*#include <cmath>
 #include <iostream>
-using namespace std;
+
 //A prime number testing
 bool checkPrime( int in_numb )
 {
@@ -57,16 +57,16 @@ bool checkPrime( int in_numb )
 int main()
 {
     int howMany;
-    cin >> howMany;
+    std::cin >> howMany;
     for( int i = 0; i < howMany; i++ )
     {
         int numb;
-        cin >> numb;
+        std::cin >> numb;
         bool b =checkPrime( numb );
         if( b )
-            cout << "Prime" << endl;
+            std::cout << "Prime" << std::endl;
         else
-            cout << "Not prime" << endl;
+            std::cout << "Not prime" << std::endl;
     }
     return 0;
 }

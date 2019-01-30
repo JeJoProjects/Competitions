@@ -1,28 +1,28 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
-#include <set>
+#include <std::vector>
+#include <std::set>
 #include <list>
 #include <iterator>
-using namespace std;
-#define ull unsigned long long int
+
+using ull = unsigned long long int;
 
 int main()
 {
    ios_base::sync_with_stdio(false);
-   cin.tie(0);
+   std::cin.tie(0);
 
-   ull T=0; cin>>T;
+   ull T=0; std::cin>>T;
    for(auto t=0; t<T; ++t)
    {
       ull size, d=0, Dig=0;
-      cin>>size;
+      std::cin>>size;
 
-      vector<ull> vec;
+      std::vector<ull> vec;
       for(auto i=0; i<(size*2); ++i)
       {
          ull temp=0;
-         cin>>temp;
+         std::cin>>temp;
          ++d;
          if(d==1)
             Dig=temp*10;
@@ -38,16 +38,16 @@ int main()
       }
       sort(vec.begin(), vec.end());
 
-      //copy(vec.begin(), vec.end(), ostream_iterator<ull>(cout," "));
+      //copy(vec.begin(), vec.end(), ostream_iterator<ull>(std::cout," "));
       ull count=1;
       for(auto i=0; i<vec.size()-1; ++i )
       {
-         //cout<<vec[i]%10<<" "<<vec[i+1]%10<<endl;
+         //std::cout<<vec[i]%10<<" "<<vec[i+1]%10<<std::endl;
          if(vec[i]%10<vec[i+1]%10)
                count++;
       }
 
-      cout<<count<<endl;
+      std::cout<<count<<std::endl;
    }
    return 0;
 }

@@ -1,27 +1,27 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-using namespace std;
+
 int main() {
     unsigned int n=0,q=0;
 
-    cin>>n;
+    std::cin>>n;
     if(n>=1 && n<=100000)
     {
-       cin>>q;
+       std::cin>>q;
        if(q>=1 && q<=100000)
        {
-          vector<vector<unsigned int>> vec(n);
+          std::vector<std::vector<unsigned int>> vec(n);
           for(unsigned int i=0; i<n; ++i)
           {
              unsigned int k=0;
-             cin>>k;
+             std::cin>>k;
              if(k>=1 && k<=300000)
              {
                 for(unsigned int len=0; len<k; ++len)
                 {
                    unsigned int temp=0;
-                   cin>>temp;
+                   std::cin>>temp;
                    vec[i].push_back(temp);
                 }
              }
@@ -30,8 +30,8 @@ int main() {
           for (unsigned int i=0;i<q;i++)
           {
              unsigned int r,c;
-             cin >> r >> c;
-             cout << vec[r][c] << endl;
+             std::cin >> r >> c;
+             std::cout << vec[r][c] << std::endl;
           }
        }
     }
@@ -42,12 +42,12 @@ int main() {
 
 #include <iostream>
 
-using namespace std;
+
 
 int main(int argc, char *argv[]) {
     int n;
     int q;
-    cin >> n >> q;
+    std::cin >> n >> q;
 
     // Create an array of pointers to integer arrays
     // (i.e., an array of variable-length arrays)
@@ -56,13 +56,13 @@ int main(int argc, char *argv[]) {
     // Fill each index of 'outer' with a variable-length array
     for(int i = 0; i < n; i++) {
         int k;
-        cin >> k;
+        std::cin >> k;
         // Create an array of length 'k' at index 'i'
         outer[i] = new int[k];
 
         // Fill each cell in the 'inner' variable-length array
         for(int j = 0; j < k; j++) {
-            cin >> outer[i][j];
+            std::cin >> outer[i][j];
         }
     }
 
@@ -70,11 +70,11 @@ int main(int argc, char *argv[]) {
     while(q-- > 0) {
         int outer_index;
         int inner_index;
-        cin >> outer_index >> inner_index;
+        std::cin >> outer_index >> inner_index;
 
         // Find the variable-length array located at outer_index
         // and print the value of the element at inner_index.
-        cout << outer[outer_index][inner_index] << endl;
+        std::cout << outer[outer_index][inner_index] << std::endl;
     }
 
     return 0;

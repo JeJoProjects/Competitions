@@ -1,30 +1,30 @@
 #include <iostream>
-#include <map>
+#include <std::map>
 #include <cassert>
 
 int main()
 {
-    std::map<std::string, int> Map;
-    int Q; std::cin>>Q;
+    std::std::map<std::std::string, int> std::map;
+    int Q; std::std::cin>>Q;
 
     while(Q--)
     {
-        std::string name;
+        std::std::string name;
         int mark;
         int query;
 
-        std::cin >> query >> name ;
+        std::std::cin >> query >> name ;
 
         assert((query>=1) && (query<=3));
 
         switch(query)
         {
-            case 1: std::cin >> mark;
-                    Map[name] += mark;
+            case 1: std::std::cin >> mark;
+                    std::map[name] += mark;
                     break;
-            case 2: Map.erase(name);
+            case 2: std::map.erase(name);
                     break;
-            case 3: std::cout << Map[name]<<std::endl;
+            case 3: std::std::cout << std::map[name]<<std::std::endl;
                     break;
         }
     }

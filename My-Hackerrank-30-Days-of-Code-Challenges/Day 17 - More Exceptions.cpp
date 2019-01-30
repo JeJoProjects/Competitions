@@ -2,7 +2,7 @@
 #include <iostream>
 #include <exception>
 #include <stdexcept>
-using namespace std;
+
 
 class  Calculator
 {
@@ -61,16 +61,16 @@ int main()
 {
     Calculator myCalculator=Calculator();
     int T,n,p;
-    cin>>T;
+    std::cin>>T;
     while(T-->0){
-      if(cin>>n>>p)
+      if(std::cin>>n>>p)
          {
          try{
                int ans=myCalculator.power(n,p);
-               cout<<ans<<endl;
+               std::cout<<ans<<std::endl;
          }
          catch(exception& e){
-             cout<<e.what()<<endl;
+             std::cout<<e.what()<<std::endl;
          }
       }
     }

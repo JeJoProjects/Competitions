@@ -43,46 +43,46 @@ std::ostream& operator<< (std::ostream& out, const Box &obj)
 void check2()
 {
 	int n;
-	std::cin>>n;
+	std::std::cin>>n;
 	Box temp;
 	for(int i=0;i<n;i++)
 	{
 		int type;
-		std::cin>>type;
+		std::std::cin>>type;
 		if(type ==1)
 		{
-			std::cout<<temp<<std::endl;
+			std::std::cout<<temp<<std::std::endl;
 		}
 		if(type == 2)
 		{
 			int l,b,h;
-			std::cin>>l>>b>>h;
+			std::std::cin>>l>>b>>h;
 			Box NewBox(l,b,h);
 			temp=NewBox;
-			std::cout<<temp<<std::endl;
+			std::std::cout<<temp<<std::std::endl;
 		}
 		if(type==3)
 		{
 			int l,b,h;
-			std::cin>>l>>b>>h;
+			std::std::cin>>l>>b>>h;
 			Box NewBox(l,b,h);
 			if(NewBox<temp)
 			{
-				std::cout<<"Lesser\n";
+				std::std::cout<<"Lesser\n";
 			}
 			else
 			{
-				std::cout<<"Greater\n";
+				std::std::cout<<"Greater\n";
 			}
 		}
 		if(type==4)
 		{
-			std::cout<<temp.CalculateVolume()<<std::endl;
+			std::std::cout<<temp.CalculateVolume()<<std::std::endl;
 		}
 		if(type==5)
 		{
 			Box NewBox(temp);
-			std::cout<<NewBox<<std::endl;
+			std::std::cout<<NewBox<<std::std::endl;
 		}
 
 	}

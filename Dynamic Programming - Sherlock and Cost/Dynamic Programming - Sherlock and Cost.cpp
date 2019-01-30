@@ -1,26 +1,26 @@
 #include <cmath>
 #include <cstdio>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
 #include <iterator>
-using namespace std;
+
 #define ul unsigned long int
 
 /*int main()
 {
     ul N=0, T=0;
-    cin>>T;
+    std::cin>>T;
 
     for(auto t=0; t<T; ++t)
     {
-       cin>>N;
-       vector<ul> vec(N),a;
+       std::cin>>N;
+       std::vector<ul> vec(N),a;
 
        ul sum=0, idx=0;
        for(auto itr=vec.begin(); itr!=vec.end(); ++itr)
        {
-          cin>>*itr;
+          std::cin>>*itr;
           if(itr!=vec.begin() && itr<vec.begin()+2)
           {
              if( *itr > * (itr-1)  || *itr== *(itr-1) )
@@ -46,7 +46,7 @@ using namespace std;
           ++idx;
        }
        //for(auto &it: a)
-         //cout<<it<<" ";
+         //std::cout<<it<<" ";
 
       for(auto itr=a.begin()+1; itr!=a.end(); ++itr)
       {
@@ -54,33 +54,33 @@ using namespace std;
          sum+= abs(diff);
       }
 
-    cout<<sum<<endl;
+    std::cout<<sum<<std::endl;
     }
     return 0;
 }
 */
 // editorial
 #include<bits/stdc++.h>
-using namespace std;
+
 int ar[100005]={},dp[100005][2]={};
 int main()
 {
     int t;
-    cin >> t;
+    std::cin >> t;
     while(t--)
     {
         int n,i,j;
-        cin >> n;
+        std::cin >> n;
         for(i=0; i<n; i++)
-            cin >> ar[i];
+            std::cin >> ar[i];
         for(i=0; i<n-1; i++)
         {
             dp[i+1][0]=max(dp[i][0],dp[i][1]+abs(ar[i]-1));
-            cout<<"DP 0 "<<max(dp[i][0],dp[i][1]+abs(ar[i]-1))<<" ";
+            std::cout<<"DP 0 "<<max(dp[i][0],dp[i][1]+abs(ar[i]-1))<<" ";
             dp[i+1][1]=max(dp[i][0]+abs(ar[i+1]-1),dp[i][1]+abs(ar[i]-ar[i+1]));
-            cout<<"DP 1 "<<max(dp[i][0]+abs(ar[i+1]-1),dp[i][1]+abs(ar[i]-ar[i+1]))<<endl;
+            std::cout<<"DP 1 "<<max(dp[i][0]+abs(ar[i+1]-1),dp[i][1]+abs(ar[i]-ar[i+1]))<<std::endl;
         }
-        cout << max(dp[n-1][0],dp[n-1][1]) << endl;
+        std::cout << max(dp[n-1][0],dp[n-1][1]) << std::endl;
     }
     return 0;
 }

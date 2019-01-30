@@ -1,31 +1,31 @@
 #include <iostream>
-#include <map>
+#include <std::map>
 #include <algorithm>
-using namespace std;
+
 
 int main()
 {
     int n=0;
-    cin>>n;
+    std::cin>>n;
     if(n>=1 && n<=100000)
     {
-       map<string, unsigned int> MAP;
-       string name="noname";
+       std::map<std::string, unsigned int> std::map;
+       std::string name="noname";
        unsigned int number;
        for(unsigned int i=0; i<n; ++i)
        {
-          cin>>name;
-          cin>>number;
-          MAP.insert(pair<string, unsigned int>(name, number));
-          // or MAP[name] = number;
+          std::cin>>name;
+          std::cin>>number;
+          std::map.insert(pair<std::string, unsigned int>(name, number));
+          // or std::map[name] = number;
        }
 
-       while(cin >> name)
+       while(std::cin >> name)
          {
-            if (MAP.find(name) != MAP.end())
-               cout << name << "=" << MAP.find(name)->second << endl;
+            if (std::map.find(name) != std::map.end())
+               std::cout << name << "=" << std::map.find(name)->second << std::endl;
             else
-               cout << "Not found" << endl;
+               std::cout << "Not found" << std::endl;
        }
     }
     return 0;

@@ -1,29 +1,29 @@
 #include <iostream>
 #include <cmath>
 
-using namespace std;
+
 
 int main()
 {
    int q=0, x[100], y[100], z[100];
-    cin>> q;
+    std::cin>> q;
     if(q>=1 && q<=100)
     {
        for(int i=0; i<q; ++i)
        {
-          cin>>x[i];
-          cin>>y[i];
-          cin>>z[i];
+          std::cin>>x[i];
+          std::cin>>y[i];
+          std::cin>>z[i];
        }
 
        for(int i=0; i<q; ++i)
        {
           if ( abs(z[i]-x[i]) < abs(z[i]-y[i]) )
-               cout<<"Cat A"<<endl;
+               std::cout<<"Cat A"<<std::endl;
           else if (abs(z[i]-x[i]) == abs(z[i]-y[i]))
-               cout<<"Mouse C"<<endl;
+               std::cout<<"Mouse C"<<std::endl;
           else
-               cout<<"Cat B"<<endl;
+               std::cout<<"Cat B"<<std::endl;
        }
 
     }

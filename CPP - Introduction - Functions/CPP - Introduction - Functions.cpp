@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cstdio>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
-using namespace std;
+
 
 int max_of_four(int a, int b, int c, int d)
 {
-    vector<int> vec;
+    std::vector<int> vec;
     int ans=0;
     vec.push_back(a);
     vec.push_back(b);

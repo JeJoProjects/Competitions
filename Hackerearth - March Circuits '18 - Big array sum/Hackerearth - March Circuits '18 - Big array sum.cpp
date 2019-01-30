@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 //#pragma GCC optimize("Ofast")
 //#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #define ms(s, n) memset(s, n, sizeof(s))
@@ -22,8 +22,8 @@ typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<int, int> pi;
-typedef vector<int> vi;
-typedef vector<pi> vii;
+typedef std::vector<int> vi;
+typedef std::vector<pi> vii;
 const int MOD = (int) 1e9 + 7;
 const int FFTMOD = 1007681537;
 const int INF = (int) 1e9;
@@ -74,11 +74,11 @@ long long query(int p) {
 void chemthan() {
     srand(2311);
     FOR(i, 0, maxn) val[i] = (long long) myrand() * myrand();
-    int test; cin >> test;
+    int test; std::cin >> test;
     assert(1 <= test && test <= 100);
     int sumn = 0, sumq = 0;
     while (test--) {
-        cin >> n >> q;
+        std::cin >> n >> q;
         assert(1 <= n && n <= 1e5);
         assert(1 <= q && q <= 1e5);
         sumn += n, sumq += q;
@@ -86,11 +86,11 @@ void chemthan() {
         assert(1 <= sumq && sumq <= 2e5);
         vi dc;
         FOR(i, 0, q) {
-            cin >> op[i] >> x[i] >> y[i], x[i]--, y[i]--;
+            std::cin >> op[i] >> x[i] >> y[i], x[i]--, y[i]--;
             assert(1 <= op[i] && op[i] <= 2);
             assert(0 <= x[i] && x[i] <= y[i] && y[i] < n);
             if (op[i] == 1) {
-                cin >> l[i] >> r[i];
+                std::cin >> l[i] >> r[i];
                 assert(0 <= l[i] && l[i] <= r[i] && r[i] <= 1e9);
                 l[i]--;
                 dc.pb(l[i]), dc.pb(r[i]);
@@ -107,17 +107,17 @@ void chemthan() {
             }
             else {
                 if (query(x[i]) == query(y[i])) {
-                    cout << "YES\n";
+                    std::cout << "YES\n";
                 }
                 else {
-                    cout << "NO\n";
+                    std::cout << "NO\n";
                 }
             }
         }
     }
 }
 int main(int argc, char* argv[]) {
-    ios_base::sync_with_stdio(0), cin.tie(0);
+    ios_base::sync_with_stdio(0), std::cin.tie(0);
     if (argc > 1) {
         assert(freopen(argv[1], "r", stdin));
     }

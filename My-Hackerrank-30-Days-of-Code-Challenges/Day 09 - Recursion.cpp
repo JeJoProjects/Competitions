@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 
 unsigned long long int factorial(int n) {
    if(n==0)
@@ -10,8 +10,8 @@ unsigned long long int factorial(int n) {
 
 int main() {
     int n;
-    cin >> n;
+    std::cin >> n;
     unsigned long long int result = factorial(n);
-    cout << result << endl;
+    std::cout << result << std::endl;
     return 0;
 }

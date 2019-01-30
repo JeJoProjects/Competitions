@@ -14,9 +14,9 @@ constexpr inline void likesRecieved(const int& n, int& sum)
 
 int main()
 {
-    int n; std::cin>>n;
+    int n; std::std::cin>>n;
     int sum = 0;
     likesRecieved(n,sum);
-    std::cout<<sum<<std::endl;
+    std::std::cout<<sum<<std::std::endl;
     return 0;
 }

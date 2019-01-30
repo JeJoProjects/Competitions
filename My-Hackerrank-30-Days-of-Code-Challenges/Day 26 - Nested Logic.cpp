@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+
 
 unsigned int Fine(unsigned int d[], unsigned int m[], unsigned int y[])
 {
@@ -17,21 +17,21 @@ unsigned int Fine(unsigned int d[], unsigned int m[], unsigned int y[])
 int main()
 {
    unsigned int day[2], month[2], year[2];
-   cin>> day[0] >> month[0] >> year[0]; //on which the book was actually returned.
-   cin>> day[1] >> month[1] >> year[1]; //on which the book was expected to be returned (due date).
+   std::cin>> day[0] >> month[0] >> year[0]; //on which the book was actually returned.
+   std::cin>> day[1] >> month[1] >> year[1]; //on which the book was expected to be returned (due date).
    if((1<=day[0] && day[0]<=31) && (1<=month[0] && month[0]<=12)  && (1<=year[0] && year[0]<=3000) )
    {
       if((1<=day[1] && day[1]<=31) && (1<=month[1] && month[1]<=12)  && (1<=year[1] && year[1]<=3000) )
       {
          unsigned int fine=Fine(day, month, year);
-         cout<<fine<<endl;
+         std::cout<<fine<<std::endl;
       }
    }
    return 0;
 }
 // editorial
 /*#include <iostream>
-using namespace std;
+
 
 int main(int argc, const char* args[]){
     int actualDay;
@@ -42,14 +42,14 @@ int main(int argc, const char* args[]){
     int expectedYear;
 
     // Actual return date
-    cin >> actualDay;
-    cin >> actualMonth;
-    cin >> actualYear;
+    std::cin >> actualDay;
+    std::cin >> actualMonth;
+    std::cin >> actualYear;
 
     // Expected return date
-    cin >> expectedDay;
-    cin >> expectedMonth;
-    cin >> expectedYear;
+    std::cin >> expectedDay;
+    std::cin >> expectedMonth;
+    std::cin >> expectedYear;
 
     int fine = 0;
 
@@ -72,5 +72,5 @@ int main(int argc, const char* args[]){
     }
     // Else it is implied that the book was returned 1+ years early
 
-    cout << fine << endl;
+    std::cout << fine << std::endl;
 }*/

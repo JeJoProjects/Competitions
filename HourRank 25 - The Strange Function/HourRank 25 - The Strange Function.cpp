@@ -1,8 +1,8 @@
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 #include <iostream>
 #include <iterator>
-using namespace std;
+
 //#define lli long long int
 
 //******************************************************************************
@@ -12,21 +12,21 @@ long long int GCD(long long int a, long long int b)
    {
       a < 0 ? a*=-1 : a;
       b < 0 ? b*=-1 : b;
-      //cout<<"a"<<a<<"b"<<b<<endl;
+      //std::cout<<"a"<<a<<"b"<<b<<std::endl;
       while(a)
       {
          long long int t = b % a;
          b = a;
          a = t;
       }
-      //cout<<"a"<<a<<"b"<<b<<endl;
+      //std::cout<<"a"<<a<<"b"<<b<<std::endl;
       return b;
    }
    else
       return ( b < 0 ?  b*=-1: b);
 }
 //******************************************************************************
-long long int FindGCD(vector<long long int> vec, unsigned int n)
+long long int FindGCD(std::vector<long long int> vec, unsigned int n)
 {
     if(n==1) return GCD(0, vec[0] );
     else
@@ -47,20 +47,20 @@ class SegmentTree
 {
 private:
    long long int n;
-	vector<long long int> data;
+	std::vector<long long int> data;
 public:
 	SegmentTree(long long int count)         // array initialization constructor.
 	{
 		this->n    = count;                 // the size of the array.
-		this->data = vector<long long int>(2 * n, 0); // initialize the vector with 2n.
+		this->data = std::vector<long long int>(2 * n, 0); // initialize the std::vector with 2n.
 		//data.assign(2*n, 0);
 		//data.resize(2 * n);
 	}
-                                          // vector initialization constructor.
-	SegmentTree(vector<long long int> const &values)
+                                          // std::vector initialization constructor.
+	SegmentTree(std::vector<long long int> const &values)
 	{
 		this->n = values.size();
-		this->data = vector<long long int>(2 * n);
+		this->data = std::vector<long long int>(2 * n);
 		copy(values.begin(), values.end(), &data[0] + n);
 		for (auto idx = n - 1; idx > 0; idx--)
 			data[idx] = min(data[idx * 2], data[idx * 2 + 1]);
@@ -83,7 +83,7 @@ public:
 
 	long long int Range_Max(unsigned int left, unsigned int right)          // interval [left, right).
 	{
-		//int result = numeric_limits<int>::max();   // set minimum to infinity.
+		//int result = numeric_limits<int>::max();   // std::set minimum to infinity.
 		left += n;                                   // both left & right index+1.
 		right += n;
 
@@ -103,18 +103,18 @@ class SegmentTreeSUM
 {
 private:
    long long int n;
-	vector<long long int> data;
+	std::vector<long long int> data;
 public:
 	SegmentTreeSUM(long long int count)    // array initialization constructor.
 	{
 		this->n    = count;                 // the size of the array.
-		this->data = vector<long long int>(2 * n, 0); // initialize the vector with 2n.
+		this->data = std::vector<long long int>(2 * n, 0); // initialize the std::vector with 2n.
 	}
-                                          // vector initialization constructor.
-	SegmentTreeSUM(vector<long long int> const &values)
+                                          // std::vector initialization constructor.
+	SegmentTreeSUM(std::vector<long long int> const &values)
 	{
 		this->n = values.size();
-		this->data = vector<long long int>(2 * n);
+		this->data = std::vector<long long int>(2 * n);
 		copy(values.begin(), values.end(), &data[0] + n);
 		for (auto idx = n - 1; idx > 0; idx--)
 			data[idx] = min(data[idx * 2], data[idx * 2 + 1]);
@@ -151,16 +151,16 @@ public:
 int main()
 {
     unsigned int n;
-    cin >> n;
+    std::cin >> n;
     if(1<=n && n<=500000)
     {
-       vector<long long int> a(n);
+       std::vector<long long int> a(n);
        SegmentTree st_max(n);
        SegmentTreeSUM st_sum(n);
        unsigned int i=0, _size=a.size();
-       for(vector<long long int>::iterator itr=a.begin(); itr!=a.end(); ++itr)
+       for(std::vector<long long int>::iterator itr=a.begin(); itr!=a.end(); ++itr)
        {
-          cin>>*itr;
+          std::cin>>*itr;
           st_max.updateST(i,*itr);
           st_sum.updateST(i,*itr);
           ++i;
@@ -171,20 +171,20 @@ int main()
        {
           for(unsigned int r=l; r<_size; ++r)
           {
-             vector<long long int> vec;
+             std::vector<long long int> vec;
              vec.assign(a.begin()+l, a.end()-_size+r+1);
-             //copy(vec.begin(), vec.end(), ostream_iterator<long long int>(cout," "));
-             //cout<<endl;
+             //copy(vec.begin(), vec.end(), ostream_iterator<long long int>(std::cout," "));
+             //std::cout<<std::endl;
              long long int gcd=FindGCD(vec, vec.size()), temp=0;
-             /*cout <<l+1<<" "<<r+1
+             /*std::cout <<l+1<<" "<<r+1
                   <<" Range GCD :"<<gcd
                   <<" Range Sum :"<<st_sum.Range_Sum(l, r+1)
-                  <<" Range Max :"<<st_max.Range_Max(l, r+1) << endl<<endl;*/
+                  <<" Range Max :"<<st_max.Range_Max(l, r+1) << std::endl<<std::endl;*/
              temp=gcd*(st_sum.Range_Sum(l, r+1) - st_max.Range_Max(l, r+1));
              Maximum=max(temp, Maximum);
           }
        }
-       cout<<Maximum<<endl;
+       std::cout<<Maximum<<std::endl;
     }
     return 0;
 }

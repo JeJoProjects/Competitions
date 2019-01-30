@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#define speed std::ios_base::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr)
+#define speed std::ios_base::sync_with_stdio(false); std::std::cin.tie(nullptr); std::std::cout.tie(nullptr)
 typedef signed long long int int64;
 
 int64 SquaresCount(const int64& a, const int64& b)
@@ -14,12 +14,12 @@ int64 SquaresCount(const int64& a, const int64& b)
 int main()
 {
     speed;
-    int T; std::cin>>T;
+    int T; std::std::cin>>T;
     while(T--)
     {
         int64 A,B;
-        std::cin >> A >> B;
-        std::cout<<SquaresCount(A,B)<<std::endl;
+        std::std::cin >> A >> B;
+        std::std::cout<<SquaresCount(A,B)<<std::std::endl;
     }
     return 0;
 }

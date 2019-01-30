@@ -1,11 +1,11 @@
 #include <iostream>
-#include <vector>
-#include <map>
-#include <string>
+#include <std::vector>
+#include <std::map>
+#include <std::string>
 #include <algorithm>
-#include <set>
+#include <std::set>
 #include <cassert>
-using namespace std;
+
 
 struct Node
 {
@@ -25,11 +25,11 @@ struct Node
 class Cache
 {
 protected:
-   map<int,Node*> mp;   // map the key to the node in the linked list
+   std::map<int,Node*> mp;   // std::map the key to the node in the linked list
    int cp;              // capacity
    Node* tail;          // double linked list tail pointer
    Node* head;          // double linked list head pointer
-   virtual void set(int, int) = 0;  //set function
+   virtual void std::set(int, int) = 0;  //std::set function
    virtual int get(int) = 0;        //get function
 
 };
@@ -39,7 +39,7 @@ class LRUCache: public Cache
     public:
     LRUCache(int c) { cp = c; }
 
-    void set(int k,int v)
+    void std::set(int k,int v)
     {
         Node *N;
 
@@ -106,23 +106,23 @@ class LRUCache: public Cache
 int main()
 {
     int n, capacity,i;
-    cin >> n >> capacity;
+    std::cin >> n >> capacity;
     LRUCache l(capacity);
     for(i=0;i<n;i++)
     {
-        string command;
-        cin >> command;
+        std::string command;
+        std::cin >> command;
         if(command == "get")
         {
             int key;
-            cin >> key;
-            cout << l.get(key) << endl;
+            std::cin >> key;
+            std::cout << l.get(key) << std::endl;
         }
-        else if(command == "set")
+        else if(command == "std::set")
         {
             int key, value;
-            cin >> key >> value;
-            l.set(key,value);
+            std::cin >> key >> value;
+            l.std::set(key,value);
         }
    }
    return 0;

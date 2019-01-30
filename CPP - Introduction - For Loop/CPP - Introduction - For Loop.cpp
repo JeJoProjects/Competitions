@@ -1,11 +1,11 @@
 #include <iostream>
 #include <cstdio>
-using namespace std;
+
 
 int main() {
     int a=0,b=0;
-    cin>>a;
-    cin>>b;
+    std::cin>>a;
+    std::cin>>b;
     if(a<=b)
     {
         for(int n=a; n<=b; n++)
@@ -13,30 +13,30 @@ int main() {
             if(n>=1 && n<=9)
             {
                 if(n==1)
-                    cout<<"one"<<endl;
+                    std::cout<<"one"<<std::endl;
                 else if(n==2)
-                    cout<<"two"<<endl;
+                    std::cout<<"two"<<std::endl;
                 else if(n==3)
-                    cout<<"three"<<endl;
+                    std::cout<<"three"<<std::endl;
                 else if(n==4)
-                    cout<<"four"<<endl;
+                    std::cout<<"four"<<std::endl;
                 else if(n==5)
-                    cout<<"five"<<endl;
+                    std::cout<<"five"<<std::endl;
                 else if(n==6)
-                    cout<<"six"<<endl;
+                    std::cout<<"six"<<std::endl;
                 else if(n==7)
-                    cout<<"seven"<<endl;
+                    std::cout<<"seven"<<std::endl;
                 else if(n==8)
-                    cout<<"eight"<<endl;
+                    std::cout<<"eight"<<std::endl;
                 else
-                    cout<<"nine"<<endl;
+                    std::cout<<"nine"<<std::endl;
             }
             else if(n>9)
             {
                 if(n%2==0)
-                    cout<<"even"<<endl;
+                    std::cout<<"even"<<std::endl;
                 else
-                    cout<<"odd"<<endl;
+                    std::cout<<"odd"<<std::endl;
             }
 
         }

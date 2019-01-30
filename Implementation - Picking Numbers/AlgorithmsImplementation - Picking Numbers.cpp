@@ -1,4 +1,4 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <cmath>
 #include <algorithm>
@@ -6,11 +6,11 @@
 #include <limits>
 int main()
 {
-  int n; std::cin >> n; //size of the array
+  int n; std::std::cin >> n; //size of the array
 
-  std::vector<int> Array;
+  std::std::vector<int> Array;
   Array.reserve(n);
-  std::copy_n(std::istream_iterator<int>(std::cin), n, back_inserter(Array));
+  std::copy_n(std::istream_iterator<int>(std::std::cin), n, back_inserter(Array));
 
   std::sort(Array.begin(), Array.end());
 
@@ -30,6 +30,6 @@ int main()
       count = 1;
     }
   }
-  std::cout << answer << std::endl;
+  std::std::cout << answer << std::std::endl;
   return 0;
 }

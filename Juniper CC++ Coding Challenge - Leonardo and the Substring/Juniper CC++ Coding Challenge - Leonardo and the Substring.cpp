@@ -1,15 +1,15 @@
 #include <iostream>
-using namespace std;
+
 #define ll long long int
 
 int main()
 {
     int test;
-    cin>>test;
+    std::cin>>test;
     while(test--)
     {
-        string S;
-        cin>>S;
+        std::string S;
+        std::cin>>S;
         // count substring
         ll count = 1, ans = 0;
         for(int i=1;i<S.size();i++)
@@ -23,7 +23,7 @@ int main()
             }
         }
         ans += (count*(count+1))/2;
-        cout<<ans<<endl;
+        std::cout<<ans<<std::endl;
     }
     return 0;
 }

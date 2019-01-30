@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+
 
 class Person{
     public:
@@ -14,13 +14,13 @@ class Person{
         if (initialAge>0) age=initialAge;
         else {
                 age=0;
-                cout<<"Age is not valid, setting age to 0."<<endl;}
+                std::cout<<"Age is not valid, setting age to 0."<<std::endl;}
     }
 
     void Person::amIOld(){
-        if      (age<13) cout<<"You are young.."<<endl;
-        else if (age>=13 && age<18) cout<<"You are a teenager.."<<endl;
-        else cout<<"You are old."<<endl;
+        if      (age<13) std::cout<<"You are young.."<<std::endl;
+        else if (age>=13 && age<18) std::cout<<"You are a teenager.."<<std::endl;
+        else std::cout<<"You are old."<<std::endl;
 
     }
 
@@ -32,9 +32,9 @@ class Person{
 int main(){
     int t;
 	int age;
-    cin >> t;
+    std::cin >> t;
     for(int i=0; i < t; i++) {
-    	cin >> age;
+    	std::cin >> age;
         Person p(age);
         p.amIOld();
         for(int j=0; j < 3; j++) {
@@ -42,7 +42,7 @@ int main(){
         }
         p.amIOld();
 
-		cout << '\n';
+		std::cout << '\n';
     }
 
     return 0;

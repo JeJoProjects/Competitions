@@ -1,15 +1,15 @@
 #include <sstream>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <iterator>
-using namespace std;
 
-vector<int> parseInts(string str)
+
+std::vector<int> parseInts(std::string str)
 {
     stringstream ss(str);
-    vector<int> vec;
-    string num;
-   // convert it as piece of string until ',' and store in num
+    std::vector<int> vec;
+    std::string num;
+   // convert it as piece of std::string until ',' and store in num
     while(getline(ss,num,','))
           vec.push_back( atoi(num.data()) );
 
@@ -18,9 +18,9 @@ vector<int> parseInts(string str)
 
 int main()
 {
-    string str;
-    cin >> str;
-    vector<int> integers = parseInts(str);
-    copy(integers.begin(), integers.end(), ostream_iterator<int>(cout,"\n") );
+    std::string str;
+    std::cin >> str;
+    std::vector<int> integers = parseInts(str);
+    copy(integers.begin(), integers.end(), ostream_iterator<int>(std::cout,"\n") );
     return 0;
 }

@@ -1,10 +1,10 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
-using namespace std;
+
 
 // basic implementation
-void insertionSort(unsigned int _size, vector<int> vec)
+void insertionSort(unsigned int _size, std::vector<int> vec)
 {
 	for(unsigned i=1;i<_size; ++i)
    {
@@ -17,18 +17,18 @@ void insertionSort(unsigned int _size, vector<int> vec)
 		}
 		vec[hole] = val;
    for(unsigned int i=0; i<_size; ++i)
-      cout<<vec[i]<<" ";
-   cout<<endl;
+      std::cout<<vec[i]<<" ";
+   std::cout<<std::endl;
 	}
 }
-// vector one : prints the array only when changes happened to it
-/*void print_values(vector<int> vec)
+// std::vector one : prints the array only when changes happened to it
+/*void print_values(std::vector<int> vec)
 {
    for(unsigned int i=0; i<vec.size(); ++i)
-      cout<<vec[i]<<" ";
-   cout<<endl;
+      std::cout<<vec[i]<<" ";
+   std::cout<<std::endl;
 }
-void insertionSort(vector<int> values)
+void insertionSort(std::vector<int> values)
 {
     print_values(values);
 
@@ -58,11 +58,11 @@ void insertionSort(vector<int> values)
 int main(void)
 {
    unsigned int arr_size;
-   cin >> arr_size;
+   std::cin >> arr_size;
 
-   vector <int>  arr(arr_size);
+   std::vector <int>  arr(arr_size);
    for(unsigned int arr_val=0; arr_val<arr_size; ++arr_val)
-      cin>>arr[arr_val];
+      std::cin>>arr[arr_val];
 
     insertionSort(arr_size, arr);
     //insertionSort( arr);  // for second function

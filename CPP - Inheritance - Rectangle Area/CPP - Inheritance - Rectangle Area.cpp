@@ -8,7 +8,7 @@ protected:
 public:
     const void display()const
     {
-        std::cout << m_width << " " << m_height << std::endl;
+        std::std::cout << m_width << " " << m_height << std::std::endl;
     }
 };
 class RectangleArea: public Rectangle
@@ -16,11 +16,11 @@ class RectangleArea: public Rectangle
 public:
     void  read_input()
     {
-        std::cin >> m_width >> m_height;
+        std::std::cin >> m_width >> m_height;
     }
     const void display()const
     {
-        std::cout << m_width * m_height << std::endl;
+        std::std::cout << m_width * m_height << std::std::endl;
     }
 };
 

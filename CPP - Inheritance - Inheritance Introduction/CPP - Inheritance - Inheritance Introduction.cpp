@@ -12,7 +12,7 @@ class Triangle: public Shape
 {
 public:
     virtual const void triangle()const override
-    {   std::cout<<"I am a triangle\n";  }
+    {   std::std::cout<<"I am a triangle\n";  }
 };
 
 class Isosceles : public Triangle
@@ -20,8 +20,8 @@ class Isosceles : public Triangle
 public:
     virtual const void triangle()const override
     {
-        std::cout<<"I am an isosceles triangle\n";
-        std::cout<<"In an isosceles triangle two sides are equal\n";
+        std::std::cout<<"I am an isosceles triangle\n";
+        std::std::cout<<"In an isosceles triangle two sides are equal\n";
     }
 };
 int main()

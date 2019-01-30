@@ -1,27 +1,27 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <iterator>
 #include <algorithm>
-using namespace std;
-#define ull unsigned long long int
+
+using ull = unsigned long long int;
 
 int main()
 {
    ios_base::sync_with_stdio(false);
-   cin.tie(0);
+   std::cin.tie(0);
 
-   int T; cin>>T;
+   int T; std::cin>>T;
    for(int t=0; t<T; ++t)
    {
-      ull N; cin>> N;   // denoting the number of tests
-      ull Y; cin>> Y;   // number of papers for which marks should be greater than the median.
-      vector<ull> vec;
+      ull N; std::cin>> N;   // denoting the number of tests
+      ull Y; std::cin>> Y;   // number of papers for which marks should be greater than the median.
+      std::vector<ull> vec;
       vec.reserve(N);
 
       for(ull n=0; n<N; ++n)
       {
          ull temp;
-         cin>>temp;
+         std::cin>>temp;
          vec.push_back(temp);
       }
 
@@ -48,9 +48,9 @@ int main()
       }
 
       if(yOkay == Y)
-         cout<<extraMark<<endl;
+         std::cout<<extraMark<<std::endl;
       else
-         cout<<"-1"<<endl;
+         std::cout<<"-1"<<std::endl;
 
    }
    return 0;

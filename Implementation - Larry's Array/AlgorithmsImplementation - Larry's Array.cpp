@@ -28,19 +28,19 @@ The formula says:
 */
 
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 
 int main()
 {
-   int T=0; std::cin >> T;
+   int T=0; std::std::cin >> T;
 
    while(T--)
    {
-      int N; std::cin >> N;
+      int N; std::std::cin >> N;
 
-      std::vector<int> vec(N);
-      for(auto &it: vec)   std::cin >> it;
+      std::std::vector<int> vec(N);
+      for(auto &it: vec)   std::std::cin >> it;
 
 /** Here the grid is 3x3, i.e: odd grid!
 *   therefore, if the inversion is even solvable */
@@ -52,8 +52,8 @@ int main()
                ++inversions;
 
       (inversions & 1) ?
-         std::cout << "NO" << "\n":
-         std::cout << "YES" << "\n";
+         std::std::cout << "NO" << "\n":
+         std::std::cout << "YES" << "\n";
    }
    return 0;
 }

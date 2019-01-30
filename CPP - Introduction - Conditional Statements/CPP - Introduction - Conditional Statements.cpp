@@ -1,32 +1,32 @@
 #include <iostream>
-using namespace std;
+
 
 
 int main(){
     int n;
-    cin >> n;
+    std::cin >> n;
     if(n>=1 && n<=1000000000)
         {
     if(n==1)
-        cout<<"one"<<endl;
+        std::cout<<"one"<<std::endl;
      else if(n==2)
-        cout<<"two"<<endl;
+        std::cout<<"two"<<std::endl;
     else if(n==3)
-        cout<<"three"<<endl;
+        std::cout<<"three"<<std::endl;
     else if(n==4)
-        cout<<"four"<<endl;
+        std::cout<<"four"<<std::endl;
     else if(n==5)
-        cout<<"five"<<endl;
+        std::cout<<"five"<<std::endl;
     else if(n==6)
-        cout<<"six"<<endl;
+        std::cout<<"six"<<std::endl;
     else if(n==7)
-        cout<<"seven"<<endl;
+        std::cout<<"seven"<<std::endl;
     else if(n==8)
-        cout<<"eight"<<endl;
+        std::cout<<"eight"<<std::endl;
     else if(n==9)
-        cout<<"nine"<<endl;
+        std::cout<<"nine"<<std::endl;
     else
-        cout<<"Greater than 9"<<endl;
+        std::cout<<"Greater than 9"<<std::endl;
         }
     return 0;
 }

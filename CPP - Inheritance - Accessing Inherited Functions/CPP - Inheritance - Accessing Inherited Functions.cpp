@@ -79,10 +79,10 @@ public:
 void D::check(int new_val)
 {
     update_val(new_val);
-    std::cout << "Value = " << val << std::endl
-            << "A's func called " << getA() << " times " << std::endl
-            << "B's func called " << getB() << " times" << std::endl
-            << "C's func called " << getC() << " times" << std::endl;
+    std::std::cout << "Value = " << val << std::std::endl
+            << "A's func called " << getA() << " times " << std::std::endl
+            << "B's func called " << getB() << " times" << std::std::endl
+            << "C's func called " << getC() << " times" << std::std::endl;
 }
 
 /*******************************************************/
@@ -90,7 +90,7 @@ int main()
 {
     D d;
     int new_val;
-    std::cin >> new_val;
+    std::std::cin >> new_val;
 
     d.check(new_val);
 

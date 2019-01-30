@@ -1,17 +1,17 @@
 #include <iostream>
-using namespace std;
+
 
 int main()
 {
     unsigned int n; //denoting the number of steps in Gary's hike.
-    cin>>n;
+    std::cin>>n;
     if(n>=2 && n<=1000000)
     {
         char S[n];
         int sea_level=0, Ans=0;
         for(unsigned int i=0; i<n; ++i)
         {
-            cin>>S[i]; //character in the array describes Gary's  [i]th step during the hike.
+            std::cin>>S[i]; //character in the array describes Gary's  [i]th step during the hike.
             if(S[i]=='U')
                 ++sea_level;
             if(S[i]=='D')
@@ -19,16 +19,16 @@ int main()
             if(sea_level==0 && S[i]=='U')
                 ++Ans;
         }
-    cout<<Ans<<endl;
+    std::cout<<Ans<<std::endl;
     }
     return 0;
 }
 // another way
 /*int main()
 {
-    cin.ignore(0xF4240, '\n');
-    string hike;
-    cin >> hike;
+    std::cin.ignore(0xF4240, '\n');
+    std::string hike;
+    std::cin >> hike;
 
     int h(0), val(0); //height, valleys
     bool in_val(false); //inside valley now
@@ -44,7 +44,7 @@ int main()
         }
     }
 
-    cout << val << endl;
+    std::cout << val << std::endl;
 
     return 0;
 }*/

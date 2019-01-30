@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 /* *****************************************************************
 // O(n log(n)) solution.
 1. find the LCM of all the integers of array A.
 2. find the GCD of all the integers of array B.
 3. Count the number of multiples of LCM that evenly divides the GCD.
 ******************************************************************** */
-int getTotalX(vector <int> a, vector <int> b)
+int getTotalX(std::vector <int> a, std::vector <int> b)
 {
     int Count=0, Change=0;
     //int MAX_A=max_element(a.begin(), a.end()); // would be more optimum, I guess.
@@ -23,7 +23,7 @@ int getTotalX(vector <int> a, vector <int> b)
              Change++;
           if(Change==0) // means, all works perfectly for set2(setB)
              Count++;   // then count it please!
-               //cout<<x<<endl;
+               //std::cout<<x<<std::endl;
        }
        Change=0; // reset to 0, for next value of x.
     }
@@ -34,14 +34,14 @@ int main()
 {
     unsigned int n; //set1:total number elements(of positive integers)
     unsigned int m; //set2:total number elements
-    cin >> n >> m;
+    std::cin >> n >> m;
     if((n>=1 && n<=10) && (m>=1 && m<=10))
     {
-       vector<int> a,b; //set1 and set2 with n elements n and m resp.
+       std::vector<int> a,b; //set1 and set2 with n elements n and m resp.
        for(unsigned int a_i = 0; a_i < n; ++a_i)
        {
           int temp=0;
-          cin>>temp;
+          std::cin>>temp;
           if(temp>=1 && temp<=100)
             a.push_back(temp);
        }
@@ -49,20 +49,20 @@ int main()
        for(unsigned int b_i = 0; b_i < m; b_i++)
        {
           int temp=0;
-          cin>>temp;
+          std::cin>>temp;
           if(temp>=1 && temp<=100)
             b.push_back(temp);
        }
 
        int total = getTotalX(a, b);
-       cout << total << endl;
+       std::cout << total << std::endl;
     }
     return 0;
 }
 // Editorial
 /*
 #include <bits/stdc++.h>
-using namespace std;
+
 #define forn(i,n) for (int i = 0; i < int(n); ++i)
 
 const int maxc = 100;
@@ -86,24 +86,24 @@ int main() {
     assert(freopen("test.in", "r", stdin));
     #endif
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     int A = 1, B = 0;
     forn (i, n) {
         int x;
-        cin >> x;
+        std::cin >> x;
         A = lcm(A, x);
         if (A > maxc) {
-            cout << 0 << '\n';
+            std::cout << 0 << '\n';
             return 0;
         }
     }
     forn (i, m) {
         int x;
-        cin >> x;
+        std::cin >> x;
         B = gcd(B, x);
     }
     if (B % A != 0) {
-        cout << 0 << '\n';
+        std::cout << 0 << '\n';
         return 0;
     }
     B /= A;
@@ -115,6 +115,6 @@ int main() {
                 ++res;
         }
     }
-    cout << res << '\n';
+    std::cout << res << '\n';
 }
 */

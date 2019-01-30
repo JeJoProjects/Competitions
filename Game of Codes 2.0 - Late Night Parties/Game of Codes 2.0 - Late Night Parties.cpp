@@ -1,31 +1,31 @@
 #include <iterator>
-#include <map>
+#include <std::map>
 #include <iostream>
 #include <algorithm>
-using namespace std;
+
 #define ul unsigned long int
 int main()
 {
-   nsigned int T=0; cin>>T; //number of test cases T.
+   nsigned int T=0; std::cin>>T; //number of test cases T.
 
    for(auto t=0; t<T; ++t)
    {
       ul B=0, N=0;
-      cin>>B >>N;           //B the budget and N the number of late night parties.
+      std::cin>>B >>N;           //B the budget and N the number of late night parties.
 
-      multimap<ul,ul> MAP;  //<excitement level(Ei), ticket fee(Ci) >
+      multimap<ul,ul> std::map;  //<excitement level(Ei), ticket fee(Ci) >
 
       for(auto i=0; i<N; ++i)
       {
          ul Ci=0, Ei=0;
-         cin>>Ci >> Ei;
-         MAP.insert(make_pair(Ei,Ci));
+         std::cin>>Ci >> Ei;
+         std::map.insert(make_pair(Ei,Ci));
       }
 
       ul COST=0, FUN=0;
-      for(auto itr=MAP.rbegin(); itr!=MAP.rend(); ++itr)
+      for(auto itr=std::map.rbegin(); itr!=std::map.rend(); ++itr)
       {
-         //cout<<COST<<" "<<FUN<<" "<<B<<endl;
+         //std::cout<<COST<<" "<<FUN<<" "<<B<<std::endl;
          if( COST+ ( (*itr).second ) <= B )
          {
             COST+=( (*itr).second ); //ticket fee(Ci)
@@ -33,7 +33,7 @@ int main()
          }
       }
 
-      cout<<COST<<" "<<FUN<<endl;
+      std::cout<<COST<<" "<<FUN<<std::endl;
    }
     return 0;
 }

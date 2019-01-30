@@ -1,14 +1,14 @@
 #include <iostream>
-#include <vector>
-#include <set>
+#include <std::vector>
+#include <std::set>
 #include <algorithm>
 #include <limits>
 typedef long long int int64;
 
-int64 maximumProfit(std::vector<int64>& p) {
+int64 maximumProfit(std::std::vector<int64>& p) {
 
-    std::multiset<int64> s1;
-    std::multiset<int64> s2;
+    std::std::multiset<int64> s1;
+    std::std::multiset<int64> s2;
     int64 ans = std::numeric_limits<int64>::min();
 
     for(size_t i=0; i < p.size(); i++)
@@ -23,8 +23,8 @@ int64 maximumProfit(std::vector<int64>& p) {
             continue;
         }
 
-        std::vector<int64> v1;
-        std::vector<int64> v2;
+        std::std::vector<int64> v1;
+        std::std::vector<int64> v2;
 
         auto it=s1.lower_bound(p[i]);
         if(it!=s1.begin())
@@ -53,11 +53,11 @@ int64 maximumProfit(std::vector<int64>& p) {
 
 int main()
 {
-    int64 n; std::cin >> n;
-    std::vector<int64> vec(n);
-    for(auto &it: vec) std::cin >> it;
+    int64 n; std::std::cin >> n;
+    std::std::vector<int64> vec(n);
+    for(auto &it: vec) std::std::cin >> it;
 
-    std::cout << maximumProfit(vec) << std::endl;
+    std::std::cout << maximumProfit(vec) << std::std::endl;
     return 0;
 }
 

@@ -1,10 +1,10 @@
 #include <functional>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
 #include <iterator>
 #include <chrono>
-using namespace std;
+
 
 unsigned long DPFact[40];  //dynamic programming
 const unsigned long M = 1000000000;
@@ -28,20 +28,20 @@ int main()
     int n=0, m=0;
     unsigned long sum=0, factNow=0, factPrev=0;
 
-    cin >> n >> m;
-    vector<int> Arr(n);
+    std::cin >> n >> m;
+    std::vector<int> Arr(n);
     for(int i = 0; i < n; ++i)
     {
-       cin >> Arr[i];
+       std::cin >> Arr[i];
     }
     for(int i = 0; i < m; ++i)
     {
         int option=0;
-        cin>>option;
+        std::cin>>option;
         if(option==1)
         {
            int l=0,r=0;
-           cin>> l>>r;
+           std::cin>> l>>r;
            if(l>=1 && (l<=r && r<=n) )
                for(int i=(l-1); i<r; ++i)  // to increment the a range of element in array by 1
                   Arr[i]=Arr[i]+1;
@@ -54,15 +54,15 @@ int main()
                //auto end=chrono::steady_clock::now();  // get the end time;
                //find the difference
                //double elapsed_time_ns =double(chrono::duration_cast <chrono::nanoseconds>(end-start).count());
-               //cout<<"Time taken for 1: "<<elapsed_time_ns/1e9<<endl;
+               //std::cout<<"Time taken for 1: "<<elapsed_time_ns/1e9<<std::endl;
                //system("pause;") ;
         }
         else if (option==2)
         {
            int l=0,r=0;
-           cin>> l>>r;
+           std::cin>> l>>r;
            sum=0, factNow=0, factPrev=0;
-           //copy(Arr.begin(), Arr.end(), ostream_iterator<int>(cout," "));
+           //copy(Arr.begin(), Arr.end(), ostream_iterator<int>(std::cout," "));
            if(l>=1 && (l<=r && r<=n) )
            {
                 for(int i=(l-1); i<r; ++i) // sum of a range of element's factorials in array.
@@ -71,7 +71,7 @@ int main()
                   {
                      factNow=factPrev;
                      sum=(sum+factNow);
-                     //cout<<"now if"<<endl;
+                     //std::cout<<"now if"<<std::endl;
                   }
                   else
                   {
@@ -89,13 +89,13 @@ int main()
                      }
                   }
                }
-           cout<<sum%M <<endl;
+           std::cout<<sum%M <<std::endl;
            }
         }
         else if (option==3)
         {
            int i=0,v=0;
-           cin>> i>>v;
+           std::cin>> i>>v;
            if(i>=1 && i<=n)
             Arr[i-1]=v;    // to change a element in a array by another val
             // OR   fill_n (Arr.begin()+(i-1),1,v);

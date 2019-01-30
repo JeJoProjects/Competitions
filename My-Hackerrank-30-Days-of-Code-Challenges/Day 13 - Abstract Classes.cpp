@@ -1,17 +1,17 @@
 #include <cstdio>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-#include <string>
-using namespace std;
+#include <std::string>
+
 //******************************************************
 class Book
 {
     protected:
-        string title;
-        string author;
+        std::string title;
+        std::string author;
     public:
-        Book(string t,string a)
+        Book(std::string t,std::string a)
         {
             title=t;
             author=a;
@@ -25,24 +25,24 @@ class MyBook: public Book
    private:
       int price=0;
    public:
-      MyBook(string title, string author, int price): Book(title, author)
+      MyBook(std::string title, std::string author, int price): Book(title, author)
       {
          this->price=price;
       }
       void display()
       {
-         cout<<"Title: "<<title<<endl
-             <<"Author: "<<author<<endl
+         std::cout<<"Title: "<<title<<std::endl
+             <<"Author: "<<author<<std::endl
              <<"Price: "<<price;
       }
 };
 //******************************************************
 int main() {
-    string title,author;
+    std::string title,author;
     int price;
-    getline(cin,title);
-    getline(cin,author);
-    cin>>price;
+    getline(std::cin,title);
+    getline(std::cin,author);
+    std::cin>>price;
     MyBook novel(title,author,price);
     novel.display();
     return 0;

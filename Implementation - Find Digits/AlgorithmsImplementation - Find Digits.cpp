@@ -1,18 +1,18 @@
 #include <cmath>
 #include <cstdio>
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include <algorithm>
-using namespace std;
-#define ull unsigned long long int
+
+using ull = unsigned long long int;
 
 int main()
 {
-    ull T; cin>>T;
+    ull T; std::cin>>T;
     for(auto t=0; t<T; ++t)
     {
         ull N, num=0, Dig=0;
-        cin>>N;
+        std::cin>>N;
 
         num=N;
         while(N>0)
@@ -23,7 +23,7 @@ int main()
                   ++Dig;
             N/=10;
         }
-        cout<<Dig<<endl;
+        std::cout<<Dig<<std::endl;
     }
     return 0;
 }

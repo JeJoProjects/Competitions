@@ -1,8 +1,8 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 #include <iterator>
-using namespace std;
+
 
 unsigned long Destination(unsigned long long int N)
 {
@@ -27,16 +27,16 @@ unsigned long Destination(unsigned long long int N)
 int main()
 {
    ios::sync_with_stdio(0);
-   cin.tie(0);
-   cout.tie(0);
+   std::cin.tie(0);
+   std::cout.tie(0);
 
-   unsigned int T=0; cin>>T;
+   unsigned int T=0; std::cin>>T;
 
    for(auto t=0; t<T;++t)
    {
       unsigned long long int N=0;
-      cin>>N;
+      std::cin>>N;
 
-      cout<<Destination(N)<<endl;
+      std::cout<<Destination(N)<<std::endl;
    }
 }

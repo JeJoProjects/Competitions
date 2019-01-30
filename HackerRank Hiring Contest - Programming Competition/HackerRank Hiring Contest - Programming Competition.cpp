@@ -1,34 +1,34 @@
 #include <cmath>
 #include <cstdio>
-#include <vector>
-#include <map>
+#include <std::vector>
+#include <std::map>
 #include <iostream>
 #include <algorithm>
-using namespace std;
+
 #define ui unsigned int
 
 int main()
 {
 	ui n = 0;
-	cin >> n; //denoting the number of programmers participating in the contest.
-	string name = "nothing";
+	std::cin >> n; //denoting the number of programmers participating in the contest.
+	std::string name = "nothing";
 	ui dec = 0, jan = 0;
-	multimap<ui, string> winner;
+	multimap<ui, std::string> winner;
 
 	for (ui i = 0; i < n; ++i)
 	{
-		cin >> name;
-		cin >> dec;
-		cin >> jan;
+		std::cin >> name;
+		std::cin >> dec;
+		std::cin >> jan;
 		ui diff = jan - dec;
 		winner.emplace(diff, name);
 	}
 	/*for (auto &it : winner)
-		cout << it.first << " " << it.second << endl;*/
+		std::cout << it.first << " " << it.second << std::endl;*/
 
 	auto itr = winner.rbegin();
 	auto win = winner.find(itr->first);
 
-	cout << win->second << " " << win->first << endl;
-	cin.get();
+	std::cout << win->second << " " << win->first << std::endl;
+	std::cin.get();
 }

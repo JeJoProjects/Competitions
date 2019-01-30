@@ -2,17 +2,17 @@
 #include <iostream>
 #include <stack>
 #include <exception>
-#include <string>
+#include <std::string>
 
 typedef long int int32;
 
-int solution(std::string &S)
+int solution(std::std::string &S)
 {
     int32 answer = 0;
     std::stack<int32> Stack;
 
     const int Size = S.size();
-    std::string str;
+    std::std::string str;
     str.clear();
 
     for(auto i=0; i<Size; ++i)
@@ -82,8 +82,8 @@ int solution(std::string &S)
 
 int main()
 {
-    std::string A("13 DUP 4 POP 5 DUP + DUP + -") ;
+    std::std::string A("13 DUP 4 POP 5 DUP + DUP + -") ;
 
-    std::cout<<solution(A)<<std::endl;
+    std::std::cout<<solution(A)<<std::std::endl;
     return 0;
 }

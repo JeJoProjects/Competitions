@@ -1,10 +1,10 @@
 #include <iostream>
-using namespace std;
 
-string hackerrankInString(string s)
+
+std::string hackerrankInString(std::string s)
 {
    unsigned int index=0;
-   string hack="hackerrank";
+   std::string hack="hackerrank";
 
    if(hack.length() > s.length())
       return "NO";
@@ -23,15 +23,15 @@ string hackerrankInString(string s)
 int main()
 {
    unsigned int q; //the number of queries
-   cin >> q;
+   std::cin >> q;
    if(q>=2 && q<=100)
    {
       for(int a0 = 0; a0 < q; a0++)
       {
-         string s; //string s to be evaluated.
-         cin >> s;
-         string result = hackerrankInString(s);
-         cout << result << endl;
+         std::string s; //std::string s to be evaluated.
+         std::cin >> s;
+         std::string result = hackerrankInString(s);
+         std::cout << result << std::endl;
       }
    }
    return 0;

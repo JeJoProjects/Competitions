@@ -1,19 +1,19 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <algorithm>
 
 int main()
 {
-    int Size; std::cin >> Size;
-    std::vector<int> vec(Size);
-    for(auto &it: vec) std::cin >> it;
+    int Size; std::std::cin >> Size;
+    std::std::vector<int> vec(Size);
+    for(auto &it: vec) std::std::cin >> it;
 
     if(std::is_sorted(vec.begin(), vec.end()))
-        std::cout << "yes" << std::endl;
+        std::std::cout << "yes" << std::std::endl;
     else
     {
-        std::vector<std::pair<int,int>> Front;
-        std::vector<std::pair<int,int>> Back;
+        std::std::vector<std::pair<int,int>> Front;
+        std::std::vector<std::pair<int,int>> Back;
 
         int rev = Size - 1;
         for(int i = 0; i < Size-1; ++i)
@@ -31,10 +31,10 @@ int main()
             std::swap(vec[Front[0].second-1],vec[Back[0].second-1]);
             if(std::is_sorted(vec.begin(), vec.end()))
             {
-                std::cout << "yes\n" ;
-                std::cout << "swap " << Front[0].second << " " << Back[0].second <<"\n";
+                std::std::cout << "yes\n" ;
+                std::std::cout << "swap " << Front[0].second << " " << Back[0].second <<"\n";
             }
-            else std::cout << "no" << std::endl;
+            else std::std::cout << "no" << std::std::endl;
         }
         else
         {
@@ -42,14 +42,14 @@ int main()
             if(std::is_sorted(Front.rbegin(), Front.rend()))
             {
                 //if( (Front.size() == vec.size())
-                std::cout << "yes\n" ;
-                std::cout << "reverse " << Front[0].second << " " << Back[0].second <<"\n";
+                std::std::cout << "yes\n" ;
+                std::std::cout << "reverse " << Front[0].second << " " << Back[0].second <<"\n";
             }
-            else std::cout << "no" << std::endl;
+            else std::std::cout << "no" << std::std::endl;
         }
-        /*for(const auto &it: Front) std::cout<<it.first<<" "<<it.second<<"\n";
-        std::cout<<std::endl;
-        for(const auto &it: Back) std::cout<<it.first<<" "<<it.second<<"\n";*/
+        /*for(const auto &it: Front) std::std::cout<<it.first<<" "<<it.second<<"\n";
+        std::std::cout<<std::std::endl;
+        for(const auto &it: Back) std::std::cout<<it.first<<" "<<it.second<<"\n";*/
     }
     return 0;
 }

@@ -1,16 +1,16 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #define max(a, b) ( (a) > (b) ? (a) : (b))
-using namespace std;
+
 
 int main(){
     int maximum=-63; // (-9)x3x3
-    vector< vector<int> > arr(6,vector<int>(6));
+    std::vector< std::vector<int> > arr(6,std::vector<int>(6));
     int temp=0;
     for(int i = 0; i < 6; i++)
        for(int j = 0; j < 6; j++)
        {
-          cin>>temp;
+          std::cin>>temp;
           if(temp>=-9 && temp<=9)
             arr[i][j]=temp;
        }
@@ -25,6 +25,6 @@ int main(){
          + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]);
        }
     }
-    cout << maximum << endl;
+    std::cout << maximum << std::endl;
     return 0;
 }

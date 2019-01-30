@@ -1,7 +1,7 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 
-static std::vector<std::string> numbers =
+static std::std::vector<std::std::string> numbers =
 {   "zero","one", "two","three","four","five",
     "six","seven","eight","nine","ten",
     "eleven","twelve","thirteen","fourteen","fifteen",
@@ -9,7 +9,7 @@ static std::vector<std::string> numbers =
     "twenty one","twenty two","twenty three","twenty four","twenty five",
     "twenty six","twenty seven","twenty eight","twenty nine"    };
 
-inline void printInWords(const std::string& H, const std::string&M)
+inline void printInWords(const std::std::string& H, const std::std::string&M)
 {
     const int Hours   = std::stoi(H);
     const int Minites = std::stoi(M);
@@ -17,27 +17,27 @@ inline void printInWords(const std::string& H, const std::string&M)
     {
         switch(Minites)
         {
-            case 15:std::cout << "quarter past " << numbers[Hours] <<std::endl; break;
-            case 30:std::cout << "half past " << numbers[Hours] <<std::endl; break;
-            case 45:std::cout << "quarter to " << numbers[Hours+1] <<std::endl; break;
-            default:std::cout << numbers[Hours] << " o' clock" <<std::endl; break;
+            case 15:std::std::cout << "quarter past " << numbers[Hours] <<std::std::endl; break;
+            case 30:std::std::cout << "half past " << numbers[Hours] <<std::std::endl; break;
+            case 45:std::std::cout << "quarter to " << numbers[Hours+1] <<std::std::endl; break;
+            default:std::std::cout << numbers[Hours] << " o' clock" <<std::std::endl; break;
         }
     }
     else if (Minites>30)
     {
-        std::cout << numbers[60-Minites] << " minutes to " << numbers[Hours+1] <<std::endl;
+        std::std::cout << numbers[60-Minites] << " minutes to " << numbers[Hours+1] <<std::std::endl;
     }
     else
     {
         (Minites==1) ?
-        std::cout << numbers[Minites] << " minute past " << numbers[Hours] <<std::endl:
-        std::cout << numbers[Minites] << " minutes past " << numbers[Hours] <<std::endl;
+        std::std::cout << numbers[Minites] << " minute past " << numbers[Hours] <<std::std::endl:
+        std::std::cout << numbers[Minites] << " minutes past " << numbers[Hours] <<std::std::endl;
     }
 }
 int main()
 {
-    std::string Hours;   std::cin>>Hours;
-    std::string Minites; std::cin>>Minites;
+    std::std::string Hours;   std::std::cin>>Hours;
+    std::std::string Minites; std::std::cin>>Minites;
     printInWords(Hours,Minites);
     return 0;
 }

@@ -1,10 +1,10 @@
 #include <iostream>
-#include <vector>
+#include <std::vector>
 #include <stdlib.h>
 #include <algorithm>
-using namespace std;
 
-int minimumTime(vector <int> x)
+
+int minimumTime(std::vector <int> x)
 {
    int mini=0;
     sort(x.begin(), x.end());
@@ -15,16 +15,16 @@ int minimumTime(vector <int> x)
 
 int main() {
     int t;
-    cin >> t;
+    std::cin >> t;
     for(int a0 = 0; a0 < t; a0++){
         int n;
-        cin >> n;
-        vector<int> x(n);
+        std::cin >> n;
+        std::vector<int> x(n);
         for(int x_i = 0; x_i < n; x_i++){
-           cin >> x[x_i];
+           std::cin >> x[x_i];
         }
         int result = minimumTime(x);
-        cout << result << endl;
+        std::cout << result << std::endl;
     }
     return 0;
 }

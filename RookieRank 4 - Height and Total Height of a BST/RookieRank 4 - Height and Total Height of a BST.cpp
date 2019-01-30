@@ -1,7 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <queue>
-using namespace std;
+
 
 struct node
 {
@@ -72,24 +72,24 @@ struct node* insert(struct node* node, int key)
 
 int main()
 {
-    int n; cin>>n;
-    unordered_map<int, int> Map;
+    int n; std::cin>>n;
+    unordered_map<int, int> std::map;
 
     for(int i =0; i<n; ++i)
     {
-        int temp; cin>>temp;
-        auto gett = Map.find(temp);
-        if(gett == Map.cend())
+        int temp; std::cin>>temp;
+        auto gett = std::map.find(temp);
+        if(gett == std::map.cend())
         {
             if(i==0)      root = insert(root, temp);
             else                 insert(root, temp);
-            Map.emplace(temp,i);
+            std::map.emplace(temp,i);
         }
     }
 
     int height = -1;
     int sum = 0;
-    for (auto itr = Map.cbegin(); itr != Map.cend(); ++itr)
+    for (auto itr = std::map.cbegin(); itr != std::map.cend(); ++itr)
     {
         struct node* temp = findNode(root,itr->first);
         int level = treeHeight(temp) - 1;
@@ -97,7 +97,7 @@ int main()
         sum += level;
     }
 
-   cout<<height<<endl<<sum<<endl;
+   std::cout<<height<<std::endl<<sum<<std::endl;
 
     return 0;
 }

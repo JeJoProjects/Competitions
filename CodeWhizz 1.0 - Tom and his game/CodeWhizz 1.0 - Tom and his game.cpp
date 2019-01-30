@@ -2,33 +2,33 @@
 #include <stdio.h>
 #include <cmath>
 #include <algorithm>
-#include <vector>
-#include <string>
+#include <std::vector>
+#include <std::string>
 
 #define ll long long
 
-using namespace std;
+
 
 int main()
 {
     int t;
-    cin>>t;
+    std::cin>>t;
     for (;t>0;t--){
         int n,q;
-        cin>>n>>q;
-        vector <int> x;
-        vector <int> y;
-        vector <int> z;
-        vector <int> w;
+        std::cin>>n>>q;
+        std::vector <int> x;
+        std::vector <int> y;
+        std::vector <int> z;
+        std::vector <int> w;
         for (;q>0;q--){
             char c;
-            cin>>c;
+            std::cin>>c;
             int x1,y1,z1,w1;
             int x2,y2,z2;
             if (c=='U'){
                 for (int i=0;i<5;i++)
-                    cin>>c;
-                cin>>x1>>y1>>z1>>w1;
+                    std::cin>>c;
+                std::cin>>x1>>y1>>z1>>w1;
                 bool flag=true;
                 for (int i=0;i<w.size();i++){
                     if (x[i]==x1&&y1==y[i]&&z[i]==z1){
@@ -44,22 +44,22 @@ int main()
                 }
             }else{
                 for (int i=0;i<4;i++)
-                    cin>>c;
-                cin>>x1>>y1>>z1;
-                cin>>x2>>y2>>z2;
+                    std::cin>>c;
+                std::cin>>x1>>y1>>z1;
+                std::cin>>x2>>y2>>z2;
                 ll ans=0;
                 for (int i=0;i<w.size();i++){
                     if (x[i]<=x2&&x[i]>=x1&&y[i]<=y2&&y[i]>=y1&&z[i]<=z2&&z[i]>=z1){
                         ans+=(ll)(w[i]);
                     }
                 }
-                cout<<ans<<endl;
+                std::cout<<ans<<std::endl;
             }
         }
     }
 }
 /*#include<bits/stdc++.h>
-using namespace std;
+
 class cord
 {
     public:
@@ -71,17 +71,17 @@ class cord
 int main()
 {
     int t;
-    cin>>t;
+    std::cin>>t;
     cord A[10000];
     while(t--)
     {   long long n,m,sum=0,i=0,q,w,e,r,l,u,flag=0,v,nb,b,value;
-    string s;
-        cin>>n>>m;
+    std::string s;
+        std::cin>>n>>m;
         while(m--)
         {   sum=0,flag=0;
-            cin>>s;
+            std::cin>>s;
             if(s=="UPDATE")
-            {  cin>>v>>b>>nb>>value;
+            {  std::cin>>v>>b>>nb>>value;
             if(i!=0){
                     for(int k=0;k<i;k++)
                     {
@@ -101,16 +101,16 @@ int main()
                 i++;
             }
             if(s=="QUERY")
-            {cin>>q>>w>>e>>r>>l>>u;
+            {std::cin>>q>>w>>e>>r>>l>>u;
 
                 for(int j=0;j<i;j++)
                 {
                     if(q<=A[j].x&&r>=A[j].x&&w<=A[j].y&&l>=A[j].y&&e<=A[j].z&&u>=A[j].z)
                     sum+=A[j].val;
                 }
-                cout<<sum<<endl;
+                std::cout<<sum<<std::endl;
             }
         }
-        cout<<endl;
+        std::cout<<std::endl;
     }
 }*/

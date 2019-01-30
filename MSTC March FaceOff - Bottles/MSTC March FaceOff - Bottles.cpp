@@ -8,7 +8,7 @@ int main()
     for(int i=1; i<=9; ++i)
     {
         int temp;
-        std::cin >> temp;
+        std::std::cin >> temp;
         minRaw = std::min(minRaw, temp);
         if(i%3 == 0)
         {
@@ -16,7 +16,7 @@ int main()
             minRaw = std::numeric_limits<int>::max();
         }
     }
-    std::cout << sum << std::endl;
+    std::std::cout << sum << std::std::endl;
     return 0;
 }
 

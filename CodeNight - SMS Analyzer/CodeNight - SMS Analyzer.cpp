@@ -2,16 +2,16 @@
 #include <iostream>
 #include <stack>
 #include <exception>
-#include <string>
-using namespace std;
+#include <std::string>
+
 
 void solution()
 {
-    std::string S;
-    getline(cin,S); //("babe you're my life") ;
+    std::std::string S;
+    getline(std::cin,S); //("babe you're my life") ;
 
     const int Size = S.size();
-    std::string str;
+    std::std::string str;
     str.clear();
     int count = 0;
     int C = 0;
@@ -42,7 +42,7 @@ void solution()
     }
     int n=count/firstCD;
     int c=C/firstCD;
-    std::cout << c << "/" << n<<endl;
+    std::std::cout << c << "/" << n<<std::endl;
 }
 
 int main()

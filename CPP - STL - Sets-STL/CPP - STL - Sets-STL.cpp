@@ -1,34 +1,34 @@
 #include <iostream>
-#include <set>
+#include <std::set>
 #include <cassert>
 typedef long long int int64;
 
 int main()
 {
-    std::set<int64> Set;
-    int Q; std::cin>>Q;
+    std::std::set<int64> std::set;
+    int Q; std::std::cin>>Q;
 
     while(Q--)
     {
         int query;
         int64 val;
-        std::cin >> query >> val;
+        std::std::cin >> query >> val;
         assert((query>=1) && (query<=3));
 
         if(query==1)
         {
-            Set.emplace(val);
+            std::set.emplace(val);
         }
         else if(query==2)
         {
-            if(Set.find(val) != Set.cend())
-                Set.erase( (Set.find(val)) );
+            if(std::set.find(val) != std::set.cend())
+                std::set.erase( (std::set.find(val)) );
         }
         else
         {
-            (Set.find(val) != Set.cend())   ?
-                std::cout<<"Yes"<<std::endl:
-                std::cout<<"No"<<std::endl;
+            (std::set.find(val) != std::set.cend())   ?
+                std::std::cout<<"Yes"<<std::std::endl:
+                std::std::cout<<"No"<<std::std::endl;
         }
     }
     return 0;

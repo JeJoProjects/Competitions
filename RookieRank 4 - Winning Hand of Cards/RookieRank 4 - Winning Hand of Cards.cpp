@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
-using namespace std;
+
 
 typedef unsigned long int        uint32;
 typedef unsigned long long int   uint64;
 
 template<typename T64, typename T32>
-inline T64 WinningHandOfCards(T32 &_size, T32 &modulo, T32 &targetX, vector<T64> &values)
+inline T64 WinningHandOfCards(T32 &_size, T32 &modulo, T32 &targetX, std::vector<T64> &values)
 {
-    vector<T64> mVec(modulo);   // to store the count of m atarting from 0 to m-1
-    vector<T64> tempVec;        // to store mVec temporarly
+    std::vector<T64> mVec(modulo);   // to store the count of m atarting from 0 to m-1
+    std::vector<T64> tempVec;        // to store mVec temporarly
     T64 index ;
 
     for(T32 i =0; i<_size; ++i)
@@ -41,17 +41,17 @@ inline T64 WinningHandOfCards(T32 &_size, T32 &modulo, T32 &targetX, vector<T64>
 int main()
 {
     ios_base::sync_with_stdio(false);
-    cin.tie(0); cout.tie(0);
+    std::cin.tie(0); std::cout.tie(0);
 
     uint32 n;           //number of cards,
     uint32 modulo;      //the modulo divisor
     uint32 targetX;     //target value respectively.
-    cin>> n >> modulo >> targetX;
+    std::cin>> n >> modulo >> targetX;
 
-    vector<uint64> values;
+    std::vector<uint64> values;
     values.reserve(n);
-    copy_n(istream_iterator<uint64>(cin), n, back_inserter(values));
+    copy_n(istream_iterator<uint64>(std::cin), n, back_inserter(values));
 
-    cout<<WinningHandOfCards(n, modulo ,targetX ,values)<<endl;
+    std::cout<<WinningHandOfCards(n, modulo ,targetX ,values)<<std::endl;
     return 0;
 }

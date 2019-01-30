@@ -1,16 +1,16 @@
 #include <iostream>
-#include <vector>
-#include <map>
+#include <std::vector>
+#include <std::map>
 #include <algorithm>
 
 int main()
 {
-    int n; std::cin >> n; //the number of attendees
-    int m; std::cin >> m; //represents the number of topics(str length)
+    int n; std::std::cin >> n; //the number of attendees
+    int m; std::std::cin >> m; //represents the number of topics(str length)
 
-    std::map<int,int> answer;
-    std::vector<std::string> vec(n);
-    for(auto &it: vec) std::cin >> it;
+    std::std::map<int,int> answer;
+    std::std::vector<std::std::string> vec(n);
+    for(auto &it: vec) std::std::cin >> it;
 
     int maxTopics = std::numeric_limits<int>::min();
 
@@ -18,8 +18,8 @@ int main()
     {
         for(int j = i+1; j < n; ++j)
         {
-            std::string A = vec[i];
-            std::string B = vec[j];
+            std::std::string A = vec[i];
+            std::std::string B = vec[j];
             int count = 0;
 
             for(int s = 0; s < m; ++s)
@@ -30,6 +30,6 @@ int main()
             answer[count]++;
         }
     }
-    std::cout <<  maxTopics << std::endl << answer[maxTopics] << std::endl;
+    std::std::cout <<  maxTopics << std::std::endl << answer[maxTopics] << std::std::endl;
     return 0;
 }

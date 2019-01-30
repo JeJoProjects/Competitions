@@ -1,28 +1,28 @@
 #include <iostream>
 #include <algorithm>
-#include <map>
-using namespace std;
+#include <std::map>
+
 #define ul unsigned long int
 
 int main()
 {
     ul N1=0, N2=0, minArray=0;
-    cin>>N1;
+    std::cin>>N1;
 
-    map<ul,ul> map1, map2;
+    std::map<ul,ul> map1, map2;
 
     for(auto i=0; i<N1;++i)
     {
         ul temp;
-        cin>>temp;
+        std::cin>>temp;
         map1[temp]++;
     }
 
-    cin>>N2;
+    std::cin>>N2;
     for(auto i=0; i<N2;++i)
     {
         ul temp;
-        cin>>temp;
+        std::cin>>temp;
         map2[temp]++;
     }
 
@@ -33,7 +33,7 @@ int main()
     for(auto i=0; i<minArray;++i)
     {
         if(itrMap1->second != itrMap2->second)
-            cout<<itrMap1->first<<" ";
+            std::cout<<itrMap1->first<<" ";
 
         ++itrMap1;
         ++itrMap2;
