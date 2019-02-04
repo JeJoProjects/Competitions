@@ -1,20 +1,20 @@
 #include <iostream>
 #include <cmath>
 
-using ull = unsigned long long;
+using uint64 = unsigned long long;
 
-ull sumOfGroup(ull k)
+uint64 sumOfGroup(uint64 k)
 {
 	return k * k * k;
 }
 
 int main()
 {
-	ull k; //k the group.
+	uint64 k; //k the group.
 	std::cin >> k;
 	if (1 <= k && k <= 1000000)
 	{
-		ull answer = sumOfGroup(k);
+		uint64 answer = sumOfGroup(k);
 		std::cout << answer << std::endl;
 		// or simply
 		//std::cout << k * k * k <<std::endl;

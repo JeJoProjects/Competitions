@@ -1,33 +1,29 @@
 #include <cmath>
 #include <limits>
-#include <std::set>
+#include <set>
 #include <iostream>
 #include <algorithm>
 #include <iterator>
 
+using uint64 = unsigned long long int;
 
-using ull = unsigned long long int;
 int main()
 {
 	std::ios_base::sync_with_stdio(0);
 	std::cin.tie(0);
 	std::cout.tie(0);
 
-	ull n, miles = 0, idx = 0;
+	uint64 n, miles = 0, idx = 0;
 	std::cin >> n;
-	std::std::multiset<ull> mySet;
-	for (auto i = 0; i < n; ++i)
+	std::multiset<uint64> mySet;
+	while(n--)
 	{
-		ull temp = 0;
-		std::cin >> temp;
-		mySet.insert(temp);
+		uint64 temp = 0; std::cin >> temp;
+		mySet.emplace(temp);
 	}
 
-	for (auto itr = mySet.rbegin(); itr != mySet.rend(); ++itr)
-	{
-		miles += ((*itr) * pow(2, idx));
-		++idx;
-	}
+	for (auto itr = mySet.rbegin(); itr != mySet.rend(); ++itr, ++idx)
+		miles += static_cast<uint64>((*itr) * std::pow(2, idx));
 
 	std::cout << miles << std::endl;
 	return 0;

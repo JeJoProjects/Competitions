@@ -3,7 +3,7 @@
 #include <iterator>
 #include <algorithm>
 
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 
 int main()
 {
@@ -13,22 +13,22 @@ int main()
    int T; std::cin>>T;
    for(int t=0; t<T; ++t)
    {
-      ull N; std::cin>> N;   // denoting the number of tests
-      ull Y; std::cin>> Y;   // number of papers for which marks should be greater than the median.
-      std::vector<ull> vec;
+      uint64 N; std::cin>> N;   // denoting the number of tests
+      uint64 Y; std::cin>> Y;   // number of papers for which marks should be greater than the median.
+      std::vector<uint64> vec;
       vec.reserve(N);
 
-      for(ull n=0; n<N; ++n)
+      for(uint64 n=0; n<N; ++n)
       {
-         ull temp;
+         uint64 temp;
          std::cin>>temp;
          vec.push_back(temp);
       }
 
       sort(vec.begin(), vec.end());
-      ull Meadian = vec[N/2];
-      ull yOkay = 0;
-      ull extraMark = 0;
+      uint64 Meadian = vec[N/2];
+      uint64 yOkay = 0;
+      uint64 extraMark = 0;
 
       for(auto itr = vec.rbegin(); itr != vec.rend(); ++itr)
       {

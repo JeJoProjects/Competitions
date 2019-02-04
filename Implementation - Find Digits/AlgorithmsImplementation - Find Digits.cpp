@@ -4,20 +4,20 @@
 #include <iostream>
 #include <algorithm>
 
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 
 int main()
 {
-    ull T; std::cin>>T;
+    uint64 T; std::cin>>T;
     for(auto t=0; t<T; ++t)
     {
-        ull N, num=0, Dig=0;
+        uint64 N, num=0, Dig=0;
         std::cin>>N;
 
         num=N;
         while(N>0)
         {
-            ull temp=N%10;
+            uint64 temp=N%10;
             if (temp!=0)
                if(num%temp ==0)
                   ++Dig;

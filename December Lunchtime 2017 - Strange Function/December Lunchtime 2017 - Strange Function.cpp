@@ -1,14 +1,14 @@
 #include <iostream>
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 
 
-ull special_Function(ull AN)
+uint64 special_Function(uint64 AN)
 {
    if (AN< 10)
       return AN;
    else
    {
-      ull sum=0;
+      uint64 sum=0;
       while(AN>0)
       {
          sum+=AN%10;
@@ -18,9 +18,9 @@ ull special_Function(ull AN)
    }
 }
 
-int solve(ull A,ull N)
+int solve(uint64 A,uint64 N)
 {
-    ull result=1;
+    uint64 result=1;
     while(N)
     {
         if(N%2==1)                  // power is odd
@@ -41,7 +41,7 @@ int main()
    {
       for(auto i=0; i<T; ++i)
       {
-         ull A=0, N=0;
+         uint64 A=0, N=0;
          int Ans=0;
          std::cin>>A >>N;                //The number(A) and its power(N)
          Ans=solve(A,N);

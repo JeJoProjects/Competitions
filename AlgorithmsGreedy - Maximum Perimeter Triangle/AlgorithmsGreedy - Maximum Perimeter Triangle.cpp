@@ -7,24 +7,24 @@
 #include <iterator>
 
 
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 int main()
 {
     ios_base::sync_with_stdio(0);
     std::cin.tie(0);
     std::cout.tie(0);
 
-    ull n, miles=0;
+    uint64 n, miles=0;
     std::cin>>n;
-    std::multiset<ull> mySet;
+    std::multiset<uint64> mySet;
     for(auto i=0; i<n;++i)
     {
-       ull temp=0;
+       uint64 temp=0;
        std::cin>>temp;
        mySet.insert(temp);
     }
 
-    ull a,b,c;
+    uint64 a,b,c;
     int idx=0;
     for(auto itr=mySet.rbegin(); itr!=mySet.rend(); ++itr)
        {

@@ -19,7 +19,7 @@
 #define bit(n, i) (((n) >> (i)) & 1)
 #define bitcount(n) __builtin_popcountll(n)
 typedef long long ll;
-typedef unsigned long long ull;
+typedef unsigned long long uint64;
 typedef long double ld;
 typedef pair<int, int> pi;
 typedef std::vector<int> vi;

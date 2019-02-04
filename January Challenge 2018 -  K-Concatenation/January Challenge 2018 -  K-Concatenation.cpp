@@ -3,11 +3,11 @@
 #include <algorithm>
 #include <iterator>
 
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 #define lli long long int
 #define uli unsigned long int
 
-lli maxSubArraySum(std::vector<lli> arr)//, ull size) // Time Complexity O(n)
+lli maxSubArraySum(std::vector<lli> arr)//, uint64 size) // Time Complexity O(n)
 {
    lli max_so_far = arr[0];
    lli curr_max = arr[0];
@@ -33,19 +33,19 @@ int main()
    {
       for(uli queri=0; queri<T; ++queri)
       {
-         ull N=0, K=0; // array A with size N (indexed from 0) and an integer K.
+         uint64 N=0, K=0; // array A with size N (indexed from 0) and an integer K.
          std::cin>> N >> K;
          if( (1 <= N && N <= 100000) && (1 <= K && K<= 100000) )
          {
             std::vector<lli> A(N), B(N*K);
 
             std::vector<lli>::iterator itr=A.begin();
-            ull idx=0;
+            uint64 idx=0;
 
             for(; itr!=A.end(); ++itr)
                {
                   std::cin>>*itr;
-                  for(ull i=idx; i< (N*K) ; i=i+N)
+                  for(uint64 i=idx; i< (N*K) ; i=i+N)
                      B[i]=*itr;
 
                   ++idx;

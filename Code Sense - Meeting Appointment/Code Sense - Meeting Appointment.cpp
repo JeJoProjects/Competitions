@@ -5,23 +5,23 @@
 #include <list>
 #include <iterator>
 
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 
 int main()
 {
    ios_base::sync_with_stdio(false);
    std::cin.tie(0);
 
-   ull T=0; std::cin>>T;
+   uint64 T=0; std::cin>>T;
    for(auto t=0; t<T; ++t)
    {
-      ull size, d=0, Dig=0;
+      uint64 size, d=0, Dig=0;
       std::cin>>size;
 
-      std::vector<ull> vec;
+      std::vector<uint64> vec;
       for(auto i=0; i<(size*2); ++i)
       {
-         ull temp=0;
+         uint64 temp=0;
          std::cin>>temp;
          ++d;
          if(d==1)
@@ -38,8 +38,8 @@ int main()
       }
       sort(vec.begin(), vec.end());
 
-      //copy(vec.begin(), vec.end(), ostream_iterator<ull>(std::cout," "));
-      ull count=1;
+      //copy(vec.begin(), vec.end(), ostream_iterator<uint64>(std::cout," "));
+      uint64 count=1;
       for(auto i=0; i<vec.size()-1; ++i )
       {
          //std::cout<<vec[i]%10<<" "<<vec[i+1]%10<<std::endl;

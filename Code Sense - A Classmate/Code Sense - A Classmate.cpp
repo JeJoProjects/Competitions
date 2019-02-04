@@ -5,22 +5,22 @@
 #include <list>
 #include <iterator>
 
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 
 int main()
 {
    ios_base::sync_with_stdio(false);
    std::cin.tie(0);
 
-   ull T=0; std::cin>>T;
+   uint64 T=0; std::cin>>T;
    for(auto t=0; t<T; ++t)
    {
-      ull size;  std::cin>>size;
+      uint64 size;  std::cin>>size;
 
-      std::vector<ull> vec;
+      std::vector<uint64> vec;
       for(auto i=0; i<size; ++i)
       {
-         ull temp=0, Dig=0;
+         uint64 temp=0, Dig=0;
          std::cin>>temp;
          while(temp>0)
          {

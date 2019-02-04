@@ -2,11 +2,11 @@
 #include <iostream>
 #include <algorithm>
 
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 
-auto DIV(ull i, ull idxi)
+auto DIV(uint64 i, uint64 idxi)
 {
-   ull thisSUM=0;
+   uint64 thisSUM=0;
    for(auto i=1; i<=idxi; ++i)
       if((idxi%i==0) && (idxi%i==0))
          thisSUM+=i;
@@ -15,7 +15,7 @@ auto DIV(ull i, ull idxi)
 }
 int main()
 {
-   ull N, num=0, sum=N; std::cin>>N;
+   uint64 N, num=0, sum=N; std::cin>>N;
 
 
    for(auto i=2; i<=N; ++i)
@@ -23,7 +23,7 @@ int main()
       num=N-1;
       if(num%i==0)
       {
-         ull FirstSUM=0;
+         uint64 FirstSUM=0;
          for(auto idx=0; idx<i;++i)
             FirstSUM+=DIV(i,idx+i);
          std::cout<<std::endl;

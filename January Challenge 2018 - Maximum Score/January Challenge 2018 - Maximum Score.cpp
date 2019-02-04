@@ -2,30 +2,30 @@
 #include <std::vector>
 #include <algorithm>
 
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 
 class SegmentTree
 {
 private:
-   ull n;
-	std::vector<ull> data;
+   uint64 n;
+	std::vector<uint64> data;
 public:
-	SegmentTree(ull count)                   // array initialization constructor.
+	SegmentTree(uint64 count)                   // array initialization constructor.
 	{
 		this->n    = count;                   // the size of the array.
-		this->data = std::vector<ull>(2 * n, 0);   // initialize the std::vector with 2n.
+		this->data = std::vector<uint64>(2 * n, 0);   // initialize the std::vector with 2n.
 	}
 
-	SegmentTree(std::vector<ull> const &values)
+	SegmentTree(std::vector<uint64> const &values)
 	{  // std::vector initialization constructor.
 		this->n = values.size();
-		this->data = std::vector<ull>(2 * n);
+		this->data = std::vector<uint64>(2 * n);
 		copy(values.begin(), values.end(), &data[0] + n);
 		for (auto idx = n - 1; idx > 0; idx--)
 			data[idx] = max(data[idx * 2], data[idx * 2 + 1]);
 	}
 
-	void updateST(ull idx, ull value)      // to input/ update the values.
+	void updateST(uint64 idx, uint64 value)      // to input/ update the values.
 	{
 		idx += n;                           // index=index+size of the array.
 		data[idx] = value;                  // assign the value to respective index.
@@ -33,20 +33,20 @@ public:
 		while (idx > 1)            // Updating all other minimum values in the tree.
       {
 			idx >>= 1;
-			ull new_min = max(data[idx<<1], data[idx<<1|1]);
+			uint64 new_min = max(data[idx<<1], data[idx<<1|1]);
          if (new_min == data[idx]) break;
          data[idx] = new_min;
 
 		}
 	}
 
-	ull Range_Max(ull left, ull right)          // interval [left, right).
+	uint64 Range_Max(uint64 left, uint64 right)          // interval [left, right).
 	{
 		//int result = numeric_limits<int>::max();   // std::set minimum to infinity.
 		left += n;                                   // both left & right index+1.
 		right += n;
 
-		ull result = data[left];
+		uint64 result = data[left];
 		while (left < right)
       {
 			if (left & 1)  result = max(result, data[left++]);
@@ -71,19 +71,19 @@ int main()
          if(1 <= N && N<= 700)
          {
             SegmentTree st_max(N*N);
-            ull Max_Ni=0, Sum=0, Max_pre=0, temp=0;;
+            uint64 Max_Ni=0, Sum=0, Max_pre=0, temp=0;;
             bool possible=true;
 
-            for(ull i=0; i<(N*N); ++i)
+            for(uint64 i=0; i<(N*N); ++i)
             {
                std::cin>>temp;
                st_max.updateST(i,temp);
             }
 
-            //for (ull i = 0; i < (N*N); i++)
+            //for (uint64 i = 0; i < (N*N); i++)
                //std::cout << i << ": " << st_max.Range_Max(i, i+1) << std::endl;
 
-            for(ull i=0; i<(N*N); i=i+N)
+            for(uint64 i=0; i<(N*N); i=i+N)
             {
                Max_Ni=st_max.Range_Max(i, i+N);
                //std::cout<<Max_Ni<<std::endl;

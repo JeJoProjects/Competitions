@@ -3,16 +3,16 @@
 #include <algorithm>
 #include <iterator>
 
-using ull = unsigned long long int;
+using uint64 = unsigned long long int;
 
-ull bitPairSum(ull x)
+uint64 bitPairSum(uint64 x)
 {
    std::vector<int> binary;
    do                               // simplest
       binary.push_back( x & 1 );    //       binary
    while ( x >>= 1 );
 
-   ull sum=0;
+   uint64 sum=0;
    for(auto it1=binary.rbegin(); it1!=binary.rend()-1; ++it1)
       for(auto it2=it1+1      ; it2!=binary.rend()  ; ++it2)
       {
@@ -28,11 +28,11 @@ int main()
    ios::sync_with_stdio(0);
    std::cin.tie(0);
    std::cout.tie(0);
-   ull T=0; std::cin>>T;
+   uint64 T=0; std::cin>>T;
 
    for(auto t=0; t<T;++t)
    {
-      ull N=0;
+      uint64 N=0;
       std::cin>>N;
 
       std::cout<<bitPairSum(N)<<std::endl;
