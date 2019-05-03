@@ -1,4 +1,3 @@
-/** Terminated due to timeout */
 #include <iterator>
 #include <vector>
 #include <iostream>
