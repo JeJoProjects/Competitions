@@ -1,35 +1,21 @@
-#include <bits/stdc++.h>
-
-
-bool Comp(std::string now, std::string next)
-{
-   int a=now.length();
-   int b=next.length();
-   if(a==b) return now<next;
-   return a<b;
-}
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <functional>
+#include <string>
 
 int main()
 {
-    int n=0, Len=0;
-    std::string temp;
-    std::cin >> n;
-    std::vector<std::string> Vec(n);
-    for(int i = 0; i < n; i++)
-       std::cin >> Vec[i];
-   sort(Vec.begin(), Vec.end(), Comp);
-    /*Len=Vec.size();
-    for(int Times=0; Times<Len-1; ++Times)
-       for(int i = 0; i <=Len-1-Times; i++)
-          if(Vec[i]>Vec[i+1])
-          {
-               std::string temp=Vec[i];
-               Vec[i]=Vec[i+1];
-               Vec[i+1]=temp;
-               std::cout<<Vec[i]<<"  "<<Vec[i+1]<<std::endl;
-          }*/
-   for(std::vector<std::string>::iterator itr=Vec.begin();
-                                 itr!=Vec.end(); ++itr)
-        std::cout<<*itr<<std::endl;
-    return 0;
+	int n{};
+	std::string temp{};  std::cin >> n;
+	std::vector<std::string> vec(n);
+	for (std::string& element : vec) std::cin >> element;
+
+	static const auto compare = [](const std::string & now, const std::string & next)
+		noexcept ->bool {
+		return now.size() == next.size() ? now < next : now.size() < next.size();
+	};
+	std::sort(vec.begin(), vec.end(), std::cref(compare));
+	for (const std::string& element : vec) std::cout << element << '\n';
+	return 0;
 }
