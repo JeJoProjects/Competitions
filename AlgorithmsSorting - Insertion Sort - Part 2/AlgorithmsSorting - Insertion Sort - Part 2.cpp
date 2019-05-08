@@ -1,5 +1,5 @@
 #include <iostream>
-#include <std::vector>
+#include <vector>
 #include <algorithm>
 
 
@@ -55,7 +55,7 @@ void insertionSort(std::vector<int> values)
     }
 }*/
 
-int main(void)
+int main()
 {
    unsigned int arr_size;
    std::cin >> arr_size;
