@@ -1,14 +1,16 @@
 #include <iostream>
+#include <string>
+#include <cstddef>   // std::size_t
+#include <algorithm> // std::count_if
+#include <cctype>    // std::isupper
 
-
-
-int main(){
-    std::string s;
-    int Count=1;
-    getline(std::cin, s);
-    for(unsigned int i=0; i<s.length(); ++i)
-      if(s[i]>='A' && s[i]<='Z') // or if(s.at(i)>='A' && s.at(i)<='Z')
-         Count++;
-   std::cout<<Count<<std::endl;
-    return 0;
+int main()
+{
+	std::string str{}; std::getline(std::cin, str);
+	const std::size_t count = std::count_if(std::begin(str), std::end(str),
+		[](const char charector) noexcept -> bool {
+			return std::isupper(charector);
+		});
+	std::cout << count + 1 << '\n';
+	return 0;
 }
