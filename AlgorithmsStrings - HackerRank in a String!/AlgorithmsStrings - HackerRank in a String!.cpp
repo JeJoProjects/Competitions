@@ -1,19 +1,20 @@
 #include <iostream>
 #include <string>
 #include <cstddef>
+using namespace std::string_literals;
 
-const std::string hackerrankInString(std::string& str) noexcept
+auto hackerrankInString(std::string& str) noexcept
 {
-	const std::string hack{ "hackerrank" };
+	const auto hack{ "hackerrank"s };
 	if (str.empty() || str.size() < hack.size())
-		return  std::string{ "NO" };
+		return  "NO"s;
 
 	std::size_t index{ 0 };
 	for (const char charector : str)
 		if (index < hack.size() && hack[index] == charector)
 			++index;
 
-	return  hack.size() == index ? std::string{ "YES" } : std::string{ "NO" };
+	return  hack.size() == index ? "YES"s : "NO"s;
 }
 
 int main()
@@ -27,3 +28,4 @@ int main()
 	}
 	return 0;
 }
+

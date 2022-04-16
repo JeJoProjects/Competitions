@@ -11,8 +11,8 @@ int main()
 	std::vector<std::string> vec(n);
 	for (std::string& element : vec) std::cin >> element;
 
-	static const auto compare = [](const std::string & now, const std::string & next)
-		noexcept ->bool {
+	static const auto compare = [](const std::string& now, const std::string& next)
+		noexcept -> bool {
 		return now.size() == next.size() ? now < next : now.size() < next.size();
 	};
 	std::sort(vec.begin(), vec.end(), std::cref(compare));
