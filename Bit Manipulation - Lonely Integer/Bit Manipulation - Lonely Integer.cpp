@@ -1,24 +1,28 @@
-#include <std::vector>
+#include <vector>
 #include <iterator>
 #include <iostream>
 #include <algorithm>
 #include <numeric>
 
-
-inline int Find(std::vector<int> &a)
+inline int Find(const std::vector<int>& a)
 {
-    return accumulate(a.begin(), a.end(), 0, [](int &k, int &i){ return k = k ^ i;});
+    return std::accumulate(a.begin(), a.end()
+        , 0, [](auto k, auto i) { return k = k ^ i; }
+    );
 }
 
 int main()
 {
-    int n; std::cin>>n;
+    int n; std::cin >> n;
 
     std::vector<int> vec;
     vec.reserve(n);
-    copy_n(istream_iterator<int>(std::cin), n, back_inserter(vec));
+    std::copy_n(std::istream_iterator<int>(std::cin)
+        , n
+        , std::back_inserter(vec)
+    );
 
-    std::cout<<Find(vec)<<std::endl;
+    std::cout << Find(vec) << std::endl;
 
     return 0;
 }
