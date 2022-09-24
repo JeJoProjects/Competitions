@@ -1,3 +1,4 @@
+
 #include <cmath>
 #include <iostream>
 
@@ -20,3 +21,4 @@ int main()
     std::cout << std::abs(Sum1 - Sum2) << std::endl;
     return 0;
 }
+
